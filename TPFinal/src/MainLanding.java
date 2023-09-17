@@ -144,6 +144,7 @@ public class MainLanding extends javax.swing.JFrame {
     private void jButton_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ingresarActionPerformed
         Login login = new Login();
         login.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton_ingresarActionPerformed
 
     /**

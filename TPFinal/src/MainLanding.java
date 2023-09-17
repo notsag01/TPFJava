@@ -5,7 +5,7 @@ public class MainLanding extends javax.swing.JFrame {
     public MainLanding() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setTitle("Nuevo Banco");
+        this.setTitle("Dinero Movil.");
     }
 
 

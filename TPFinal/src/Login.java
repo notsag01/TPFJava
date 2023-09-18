@@ -65,7 +65,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabel_imagenUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_imagenUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_imagenUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 180)));
 
         jLabel1.setText("Ingrese su Usuario");
 
@@ -126,15 +126,15 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(jLabel_imagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel_imagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel_imagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel_imagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(jComboBox_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
@@ -144,7 +144,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 540, 600));
@@ -173,7 +173,7 @@ public class Login extends javax.swing.JFrame {
             break;
             case "Chapulin": jLabel_imagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/chapulin.png")));
             break;
-            case "Don Ramon": jLabel_imagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/donRamon.png")));
+            case "Don Ramon": jLabel_imagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/donRamon.jpg")));
             break;
         }
     }//GEN-LAST:event_jComboBox_usuariosActionPerformed

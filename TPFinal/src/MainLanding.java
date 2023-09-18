@@ -18,6 +18,7 @@ public class MainLanding extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jButton_ingresar = new javax.swing.JButton();
         jButton_salir = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -45,7 +46,7 @@ public class MainLanding extends javax.swing.JFrame {
         jButton_ingresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton_ingresar.setForeground(new java.awt.Color(102, 102, 255));
         jButton_ingresar.setText("Ingresar");
-        jButton_ingresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(120, 120, 255), 2, true));
+        jButton_ingresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jButton_ingresar.setOpaque(true);
         jButton_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +57,7 @@ public class MainLanding extends javax.swing.JFrame {
         jButton_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton_salir.setForeground(new java.awt.Color(102, 102, 255));
         jButton_salir.setText("Salir");
-        jButton_salir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(120, 120, 255), 2, true));
+        jButton_salir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jButton_salir.setOpaque(true);
         jButton_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +87,9 @@ public class MainLanding extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+
+        jLabel5.setText("By Gastón Córdoba.");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -187,6 +191,7 @@ public class MainLanding extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

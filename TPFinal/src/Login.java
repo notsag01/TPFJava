@@ -26,6 +26,7 @@ public class Login extends javax.swing.JFrame {
         setTitle("Login");
         setResizable(false);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setPreferredSize(new java.awt.Dimension(750, 600));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

@@ -30,6 +30,7 @@ public class MainLanding extends javax.swing.JFrame {
         jPanel4.setOpaque(false);
 
         jButton_ingresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_ingresar.setForeground(new java.awt.Color(102, 102, 255));
         jButton_ingresar.setText("Ingresar");
         jButton_ingresar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(120, 120, 255), 2, true));
         jButton_ingresar.setOpaque(true);
@@ -40,6 +41,7 @@ public class MainLanding extends javax.swing.JFrame {
         });
 
         jButton_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_salir.setForeground(new java.awt.Color(102, 102, 255));
         jButton_salir.setText("Salir");
         jButton_salir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(120, 120, 255), 2, true));
         jButton_salir.setOpaque(true);

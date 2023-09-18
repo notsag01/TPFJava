@@ -18,8 +18,8 @@ public class Login extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
+        jComboBox_usuarios = new javax.swing.JComboBox<>();
+        jLabel_imagenUsuario = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
@@ -56,12 +56,16 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
         jPanel1.setPreferredSize(new java.awt.Dimension(750, 600));
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Admin", "Chavo", "Chapulin", "Don Ramon" }));
+        jComboBox_usuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jComboBox_usuarios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Admin", "Chavo", "Chapulin", "Don Ramon" }));
+        jComboBox_usuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_usuariosActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("jLabel2");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_imagenUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_imagenUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setText("Ingrese su Usuario");
 
@@ -114,7 +118,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -122,16 +126,16 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel_imagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_imagenUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(35, 35, 35)
@@ -160,6 +164,19 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_usuariosActionPerformed
+        switch(jComboBox_usuarios.getSelectedItem().toString()){
+            case "Admin": jLabel_imagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png")));
+            break;
+            case "Chavo": jLabel_imagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/chavo.png")));
+            break;
+            case "Chapulin": jLabel_imagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/chapulin.png")));
+            break;
+            case "Don Ramon": jLabel_imagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/donRamon.png")));
+            break;
+        }
+    }//GEN-LAST:event_jComboBox_usuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,14 +215,14 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox_usuarios;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel_imagenUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

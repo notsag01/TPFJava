@@ -184,10 +184,28 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox_usuariosActionPerformed
 
     private void jButton_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_loginActionPerformed
-        String usuario = jComboBox_usuarios.getSelectedItem().toString();
+        String usuario = jComboBox_usuarios.getSelectedItem().toString().toUpperCase();
         char[] password=jPasswordField_contrasenia.getPassword();
         String contrasenia= new String (password);
-        System.out.println(contrasenia);
+        
+        switch(usuario){
+            case "ADMIN": if(contrasenia.equals("admin")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+            case "CHAVO": if(contrasenia.equals("123")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+            case "CHAPULIN": if(contrasenia.equals("123")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+            case "DON RAMON": if(contrasenia.equals("123")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+        }
     }//GEN-LAST:event_jButton_loginActionPerformed
 
     /**

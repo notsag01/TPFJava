@@ -28,6 +28,7 @@ public class Escritorio extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem_altas = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +56,7 @@ public class Escritorio extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 786, Short.MAX_VALUE)
+                .addGap(0, 753, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -75,10 +76,30 @@ public class Escritorio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jMenu1.setText("File");
+        jMenuBar1.setBackground(new java.awt.Color(102, 102, 255));
+        jMenuBar1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setOpaque(true);
+
+        jMenu1.setText("Clientes");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu1.setPreferredSize(new java.awt.Dimension(100, 30));
+
+        jMenuItem_altas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jMenuItem_altas.setText("Altas");
+        jMenuItem_altas.setOpaque(true);
+        jMenuItem_altas.setPreferredSize(new java.awt.Dimension(100, 30));
+        jMenuItem_altas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_altasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem_altas);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Productos");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu2.setPreferredSize(new java.awt.Dimension(100, 30));
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -100,6 +121,10 @@ public class Escritorio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem_altasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_altasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem_altasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,6 +167,7 @@ public class Escritorio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem_altas;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

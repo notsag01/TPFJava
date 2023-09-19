@@ -7,7 +7,31 @@ public class Login extends javax.swing.JFrame {
         this.setTitle("Login");
         
     }
-
+    
+    private void ingresar(){
+        String usuario = jComboBox_usuarios.getSelectedItem().toString().toUpperCase();
+        char[] password=jPasswordField_contrasenia.getPassword();
+        String contrasenia= new String (password);
+        
+        switch(usuario){
+            case "ADMIN": if(contrasenia.equals("admin")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+            case "CHAVO": if(contrasenia.equals("123")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+            case "CHAPULIN": if(contrasenia.equals("123")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+            case "DON RAMON": if(contrasenia.equals("123")){
+                            System.out.println("ok");
+                        }else{System.out.println("noOk");}
+            break;
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -37,7 +61,7 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Castellar", 3, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(192, 192, 192));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("m");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, 50));
@@ -84,6 +108,11 @@ public class Login extends javax.swing.JFrame {
         jButton_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_loginActionPerformed(evt);
+            }
+        });
+        jButton_login.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton_loginKeyPressed(evt);
             }
         });
 
@@ -184,29 +213,12 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox_usuariosActionPerformed
 
     private void jButton_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_loginActionPerformed
-        String usuario = jComboBox_usuarios.getSelectedItem().toString().toUpperCase();
-        char[] password=jPasswordField_contrasenia.getPassword();
-        String contrasenia= new String (password);
-        
-        switch(usuario){
-            case "ADMIN": if(contrasenia.equals("admin")){
-                            System.out.println("ok");
-                        }else{System.out.println("noOk");}
-            break;
-            case "CHAVO": if(contrasenia.equals("123")){
-                            System.out.println("ok");
-                        }else{System.out.println("noOk");}
-            break;
-            case "CHAPULIN": if(contrasenia.equals("123")){
-                            System.out.println("ok");
-                        }else{System.out.println("noOk");}
-            break;
-            case "DON RAMON": if(contrasenia.equals("123")){
-                            System.out.println("ok");
-                        }else{System.out.println("noOk");}
-            break;
-        }
+        ingresar();        
     }//GEN-LAST:event_jButton_loginActionPerformed
+
+    private void jButton_loginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton_loginKeyPressed
+        ingresar();
+    }//GEN-LAST:event_jButton_loginKeyPressed
 
     /**
      * @param args the command line arguments

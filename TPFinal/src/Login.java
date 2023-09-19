@@ -9,25 +9,27 @@ public class Login extends javax.swing.JFrame {
     }
     
     private void ingresar(){
+        Escritorio escritorio = new Escritorio();
+        
         String usuario = jComboBox_usuarios.getSelectedItem().toString().toUpperCase();
         char[] password=jPasswordField_contrasenia.getPassword();
         String contrasenia= new String (password);
         
         switch(usuario){
             case "ADMIN": if(contrasenia.equals("admin")){
-                            System.out.println("ok");
+                            escritorio.setVisible(true);
                         }else{System.out.println("noOk");}
             break;
             case "CHAVO": if(contrasenia.equals("123")){
-                            System.out.println("ok");
+                            escritorio.setVisible(true);
                         }else{System.out.println("noOk");}
             break;
             case "CHAPULIN": if(contrasenia.equals("123")){
-                            System.out.println("ok");
+                            escritorio.setVisible(true);
                         }else{System.out.println("noOk");}
             break;
             case "DON RAMON": if(contrasenia.equals("123")){
-                            System.out.println("ok");
+                            escritorio.setVisible(true);
                         }else{System.out.println("noOk");}
             break;
         }

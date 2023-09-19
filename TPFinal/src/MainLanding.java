@@ -1,11 +1,13 @@
 
 public class MainLanding extends javax.swing.JFrame {
-
-
+        
+    
     public MainLanding() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Dinero Movil.");
+        
+        
     }
 
 

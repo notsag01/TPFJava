@@ -1,5 +1,4 @@
 
-import Data.Altas;
 import javax.swing.JFrame;
 
 
@@ -20,9 +19,10 @@ public class Escritorio extends javax.swing.JFrame {
     }
     
     private void nuevaAlta(){
-        Altas altas = new Altas();
-        altas.setVisible(true);
-        jPanel_escritorio.add(altas);
+
+        Altas main = new Altas();
+        main.setVisible(true);
+        jPanel_escritorio.add(main);
     }
 
     @SuppressWarnings("unchecked")

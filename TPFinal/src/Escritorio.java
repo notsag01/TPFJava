@@ -3,21 +3,27 @@ import javax.swing.JFrame;
 
 
 public class Escritorio extends javax.swing.JFrame {
+    private String usuario;
 
-
-    public Escritorio() {
+    public Escritorio(String usuario) {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setResizable(false);        
+        
+        this.usuario=usuario;
+        jLabel_usuario.setText("Usuario: " + usuario);
     }
 
+    private Escritorio() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel_usuario = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -25,8 +31,11 @@ public class Escritorio extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setBackground(new java.awt.Color(102, 102, 255));
-        jLabel1.setOpaque(true);
+        jLabel_usuario.setBackground(new java.awt.Color(102, 102, 255));
+        jLabel_usuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel_usuario.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_usuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel_usuario.setOpaque(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -51,14 +60,14 @@ public class Escritorio extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1421, Short.MAX_VALUE)
+            .addComponent(jLabel_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 1421, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jLabel_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -117,8 +126,8 @@ public class Escritorio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel_usuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

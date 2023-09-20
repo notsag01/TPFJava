@@ -20,9 +20,10 @@ public class Escritorio extends javax.swing.JFrame {
     
     private void nuevaAlta(){
 
-        Altas main = new Altas();
-        main.setVisible(true);
-        jPanel_escritorio.add(main);
+        Altas altas = new Altas();
+        altas.setVisible(true);
+        altas.setLocation(750, 10);
+        jPanel_escritorio.add(altas);
     }
 
     @SuppressWarnings("unchecked")

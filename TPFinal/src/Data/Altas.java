@@ -1,4 +1,3 @@
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +13,6 @@ public class Altas extends javax.swing.JInternalFrame {
     
     public Altas() {
         initComponents();
-        //this.setLocationRelativeTo(null);
         String[] provincias = new String[]{
                "", 
                "Buenos Aires",
@@ -84,13 +82,13 @@ public class Altas extends javax.swing.JInternalFrame {
         if(arroba&&punto){
             JOptionPane.showMessageDialog(null, "El formularioa fue ingresado correctamente",
                     "Validacion Confirmada",JOptionPane.INFORMATION_MESSAGE);
+                    arroba=false;
+                    punto=false;
+                    limpiarFormulario();
         }else{
             JOptionPane.showMessageDialog(null, "El mail ingresado no es correcto. \n Ingrese un nuevo mail",
                     "Validacion Incorrecta", HEIGHT);
         }
-        arroba=false;
-        punto=false;
-        limpiarFormulario();
     }
     
     public void limpiarFormulario(){
@@ -218,9 +216,12 @@ public class Altas extends javax.swing.JInternalFrame {
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(204, 254, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
 
+        jButton_comenzar.setBackground(new java.awt.Color(102, 102, 255));
         jButton_comenzar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton_comenzar.setForeground(new java.awt.Color(255, 255, 255));
         jButton_comenzar.setText("CREAR");
         jButton_comenzar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,7 +229,9 @@ public class Altas extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton_limpiar.setBackground(new java.awt.Color(102, 102, 255));
         jButton_limpiar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton_limpiar.setForeground(new java.awt.Color(255, 255, 255));
         jButton_limpiar.setText("LIMPIAR");
         jButton_limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +239,9 @@ public class Altas extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(102, 102, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("SALIR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,7 +270,7 @@ public class Altas extends javax.swing.JInternalFrame {
                     .addComponent(jButton_comenzar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -371,19 +376,19 @@ public class Altas extends javax.swing.JInternalFrame {
                     .addComponent(jTextField_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 57, Short.MAX_VALUE))
+                .addGap(0, 47, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 610));
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 255), 2, true));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 496, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,7 +401,7 @@ public class Altas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton_comenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_comenzarActionPerformed

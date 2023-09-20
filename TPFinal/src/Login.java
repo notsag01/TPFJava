@@ -8,8 +8,13 @@ public class Login extends javax.swing.JFrame {
         
     }
     
+    private void abrirEscritorio(String usuario){
+        Escritorio escritorio = new Escritorio(usuario);
+        escritorio.setVisible(true);
+        this.setVisible(false);
+    }
+    
     private void ingresar(){
-        Escritorio escritorio = new Escritorio();
         
         String usuario = jComboBox_usuarios.getSelectedItem().toString().toUpperCase();
         char[] password=jPasswordField_contrasenia.getPassword();
@@ -17,19 +22,19 @@ public class Login extends javax.swing.JFrame {
         
         switch(usuario){
             case "ADMIN": if(contrasenia.equals("admin")){
-                            escritorio.setVisible(true);
+                            abrirEscritorio(usuario);
                         }else{System.out.println("noOk");}
             break;
             case "CHAVO": if(contrasenia.equals("123")){
-                            escritorio.setVisible(true);
+                            abrirEscritorio(usuario);
                         }else{System.out.println("noOk");}
             break;
             case "CHAPULIN": if(contrasenia.equals("123")){
-                            escritorio.setVisible(true);
+                            abrirEscritorio(usuario);
                         }else{System.out.println("noOk");}
             break;
             case "DON RAMON": if(contrasenia.equals("123")){
-                            escritorio.setVisible(true);
+                            abrirEscritorio(usuario);
                         }else{System.out.println("noOk");}
             break;
         }
@@ -97,6 +102,11 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordField_contrasenia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jPasswordField_contrasenia.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPasswordField_contrasenia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField_contraseniaKeyPressed(evt);
+            }
+        });
 
         jLabel5.setText("Ingrese su Contraseña");
 
@@ -221,6 +231,10 @@ public class Login extends javax.swing.JFrame {
     private void jButton_loginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton_loginKeyPressed
         ingresar();
     }//GEN-LAST:event_jButton_loginKeyPressed
+
+    private void jPasswordField_contraseniaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField_contraseniaKeyPressed
+        //ingresar();
+    }//GEN-LAST:event_jPasswordField_contraseniaKeyPressed
 
     /**
      * @param args the command line arguments

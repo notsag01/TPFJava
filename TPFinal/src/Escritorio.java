@@ -1,4 +1,5 @@
 
+import Clientes.Altas;
 import javax.swing.JFrame;
 
 
@@ -20,7 +21,7 @@ public class Escritorio extends javax.swing.JFrame {
     
     private void nuevaAlta(){
 
-        Altas altas = new Altas();
+        Altas altas = new Altas(usuario);
         altas.setVisible(true);
         altas.setLocation(750, 10);
         jPanel_escritorio.add(altas);

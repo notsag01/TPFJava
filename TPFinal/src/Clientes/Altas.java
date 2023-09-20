@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Altas extends javax.swing.JInternalFrame {
     boolean arroba=false,punto=false;       
-    String mail;
+    String nombre, apellido,mail;
     private String usuario;
     
     
@@ -92,6 +92,7 @@ public class Altas extends javax.swing.JInternalFrame {
         if(arroba&&punto){
             JOptionPane.showMessageDialog(null, "El formularioa fue ingresado correctamente",
                     "Validacion Confirmada",JOptionPane.INFORMATION_MESSAGE);
+                    getData();
                     arroba=false;
                     punto=false;
                     limpiarFormulario();
@@ -99,6 +100,15 @@ public class Altas extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "El mail ingresado no es correcto. \n Ingrese un nuevo mail",
                     "Validacion Incorrecta", HEIGHT);
         }
+    }
+    
+    private void getData(){
+        usuario=this.usuario;
+        nombre=jTextField_nombre.getText();
+        apellido=jTextField_apellido.getText();
+        
+        DataClientes dataCliente = new DataClientes(usuario,nombre,apellido);
+        dataCliente.imprimir();
     }
     
     public void limpiarFormulario(){

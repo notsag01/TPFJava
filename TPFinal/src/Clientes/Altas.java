@@ -19,6 +19,7 @@ public class Altas extends javax.swing.JInternalFrame {
         this.setTitle("Alta Clientes");
         String[] provincias = new String[]{
                "", 
+               "Capital Federal",
                "Buenos Aires",
                "Catamarca",
                "Chaco",

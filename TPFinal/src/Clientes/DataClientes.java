@@ -3,12 +3,13 @@ package Clientes;
 
 
 public class DataClientes {
-    String usuario,nombre, apellido,fechaDeNacimiento,genero,cuil,domicilio,localidad,provincia,estadoCivil,hijos;
+    String usuario,nombre, apellido,mail,fechaDeNacimiento,genero,cuil,domicilio,localidad,provincia,estadoCivil,hijos;
     
     public DataClientes(
             String usuario,
             String nombre, 
-            String apellido,            
+            String apellido, 
+            String mail,
             String fechaDeNacimiento,            
             String genero,            
             String cuil,            
@@ -21,6 +22,7 @@ public class DataClientes {
         this.usuario=usuario;
         this.nombre=nombre;
         this.apellido=apellido;
+        this.mail=mail;
         this.fechaDeNacimiento=fechaDeNacimiento;
         this.genero=genero;
         this.cuil=cuil;
@@ -47,6 +49,7 @@ public class DataClientes {
         System.out.println(this.usuario + " " + 
                 this.nombre + " " + 
                 this.apellido + " " +
+                this.mail + " " +
                 this.fechaDeNacimiento + " " +
                 this.genero + " " +
                 this.cuil + " " +

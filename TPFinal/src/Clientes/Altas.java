@@ -94,7 +94,7 @@ public class Altas extends javax.swing.JInternalFrame {
         if(arroba&&punto){
             JOptionPane.showMessageDialog(null, "El formularioa fue ingresado correctamente",
                     "Validacion Confirmada",JOptionPane.INFORMATION_MESSAGE);
-                    getData(mail);
+                    getData();
                     arroba=false;
                     punto=false;
                     limpiarFormulario();
@@ -104,10 +104,11 @@ public class Altas extends javax.swing.JInternalFrame {
         }
     }
     
-    private void getData(String mail){
+    private void getData(){
         usuario=this.usuario;
         nombre=jTextField_nombre.getText();
-        apellido=jTextField_apellido.getText();
+        apellido=jTextField_apellido.getText();        
+        mail=this.mail;
         fechaDeNacimiento=jTextField_fechaNacimiento.getText();
         genero= (String) jComboBox_genero.getSelectedItem();
         cuil=jTextField_cuil.getText();
@@ -121,6 +122,7 @@ public class Altas extends javax.swing.JInternalFrame {
                 usuario,
                 nombre,
                 apellido,
+                mail,
                 fechaDeNacimiento,
                 genero,
                 cuil,

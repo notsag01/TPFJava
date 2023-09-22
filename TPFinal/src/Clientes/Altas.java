@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class Altas extends javax.swing.JInternalFrame {
     boolean arroba=false,punto=false;
     //genero,cuil,domicilio,localidad,provincia,estadoCivil,hijos,mail;
-    String nombre, apellido,mail,fechaDeNacimiento,genero;
+    String nombre, apellido,mail,fechaDeNacimiento,genero,cuil,domicilio,localidad,provincia,estadoCivil,hijos;
     private String usuario;
     
     
@@ -94,7 +94,7 @@ public class Altas extends javax.swing.JInternalFrame {
         if(arroba&&punto){
             JOptionPane.showMessageDialog(null, "El formularioa fue ingresado correctamente",
                     "Validacion Confirmada",JOptionPane.INFORMATION_MESSAGE);
-                    getData();
+                    getData(mail);
                     arroba=false;
                     punto=false;
                     limpiarFormulario();
@@ -104,14 +104,32 @@ public class Altas extends javax.swing.JInternalFrame {
         }
     }
     
-    private void getData(){
+    private void getData(String mail){
         usuario=this.usuario;
         nombre=jTextField_nombre.getText();
         apellido=jTextField_apellido.getText();
         fechaDeNacimiento=jTextField_fechaNacimiento.getText();
         genero= (String) jComboBox_genero.getSelectedItem();
+        cuil=jTextField_cuil.getText();
+        domicilio=jTextField_domicilio.getText();
+        localidad=jTextField_localidad.getText();
+        provincia=(String)jComboBox_provincias.getSelectedItem();
+        estadoCivil=(String)jComboBox_estadoCivil.getSelectedItem();
+        hijos=jTextField_hijos.getText();
         
-        DataClientes dataCliente = new DataClientes(usuario,nombre,apellido);
+        DataClientes dataCliente = new DataClientes(
+                usuario,
+                nombre,
+                apellido,
+                fechaDeNacimiento,
+                genero,
+                cuil,
+                domicilio,
+                localidad,
+                provincia,
+                estadoCivil,
+                hijos
+        );
         dataCliente.imprimir();
     }
     

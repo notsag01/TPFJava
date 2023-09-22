@@ -9,8 +9,9 @@ import javax.swing.JOptionPane;
 
 
 public class Altas extends javax.swing.JInternalFrame {
-    boolean arroba=false,punto=false;       
-    String nombre, apellido,mail;
+    boolean arroba=false,punto=false;
+    //genero,cuil,domicilio,localidad,provincia,estadoCivil,hijos,mail;
+    String nombre, apellido,mail,fechaDeNacimiento,genero;
     private String usuario;
     
     
@@ -107,6 +108,8 @@ public class Altas extends javax.swing.JInternalFrame {
         usuario=this.usuario;
         nombre=jTextField_nombre.getText();
         apellido=jTextField_apellido.getText();
+        fechaDeNacimiento=jTextField_fechaNacimiento.getText();
+        genero= (String) jComboBox_genero.getSelectedItem();
         
         DataClientes dataCliente = new DataClientes(usuario,nombre,apellido);
         dataCliente.imprimir();

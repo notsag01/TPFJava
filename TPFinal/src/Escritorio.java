@@ -19,7 +19,7 @@ public class Escritorio extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     private void calcularCambio(){
-        Cambio cambio = new Cambio();
+        Cambio cambio = new Cambio(usuario);
         cambio.setVisible(true);
         jPanel_escritorio.add(cambio);
     }

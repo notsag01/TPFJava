@@ -7,6 +7,8 @@ public class Cambio extends javax.swing.JInternalFrame {
     double cantidadPesos, cambio, impPais, impGcias;
     int eleccionMoneda;
     
+    private String usuario;
+    
      private double calcularCambio(double cantidadPesos, double tasaCambio){
             return cantidadPesos * tasaCambio;
         }
@@ -58,8 +60,10 @@ public class Cambio extends javax.swing.JInternalFrame {
         jTextField_cambio.setText(String.format("$%,.2f", cambio));
         }
 
-    public Cambio() {
+    public Cambio(String usuario) {
         initComponents();
+        
+        this.usuario=usuario;
     }
 
     /**

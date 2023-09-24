@@ -161,7 +161,8 @@ public class Cambio extends javax.swing.JInternalFrame {
         jComboBox_moneda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "DOLAR OFICIAL", "EUROS", "REALES", "DOLAR BLUE" }));
 
         jTextField_impuestoPais.setEditable(false);
-        jTextField_impuestoPais.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_impuestoPais.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTextField_impuestoPais.setEnabled(false);
         jTextField_impuestoPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_impuestoPaisActionPerformed(evt);
@@ -169,10 +170,12 @@ public class Cambio extends javax.swing.JInternalFrame {
         });
 
         jTextField_impuestosGcias.setEditable(false);
-        jTextField_impuestosGcias.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_impuestosGcias.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTextField_impuestosGcias.setEnabled(false);
 
         jTextField_cambio.setEditable(false);
-        jTextField_cambio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_cambio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTextField_cambio.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

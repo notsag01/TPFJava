@@ -1,4 +1,5 @@
 
+import Cambio.Cambio;
 import Clientes.Altas;
 import javax.swing.JFrame;
 

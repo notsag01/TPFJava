@@ -1,3 +1,5 @@
+package Cambio;
+
 
 import javax.swing.JOptionPane;
 
@@ -163,6 +165,11 @@ public class Cambio extends javax.swing.JInternalFrame {
 
         jComboBox_moneda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jComboBox_moneda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "DOLAR OFICIAL", "EUROS", "REALES", "DOLAR BLUE" }));
+        jComboBox_moneda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_monedaActionPerformed(evt);
+            }
+        });
 
         jTextField_impuestoPais.setEditable(false);
         jTextField_impuestoPais.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -331,6 +338,10 @@ public class Cambio extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         calcularCambio();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox_monedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_monedaActionPerformed
+        calcularCambio();
+    }//GEN-LAST:event_jComboBox_monedaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

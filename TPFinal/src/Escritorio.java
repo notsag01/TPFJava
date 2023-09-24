@@ -18,6 +18,12 @@ public class Escritorio extends javax.swing.JFrame {
     private Escritorio() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    private void calcularCambio(){
+        Cambio cambio = new Cambio();
+        cambio.setVisible(true);
+        jPanel_escritorio.add(cambio);
+    }
+            
     
     private void nuevaAlta(){
 
@@ -39,6 +45,7 @@ public class Escritorio extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem_altas = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +116,15 @@ public class Escritorio extends javax.swing.JFrame {
         jMenu2.setText("Productos");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenu2.setPreferredSize(new java.awt.Dimension(100, 30));
+
+        jMenuItem1.setText("Calculadora Cambio");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -134,6 +150,10 @@ public class Escritorio extends javax.swing.JFrame {
     private void jMenuItem_altasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_altasActionPerformed
         nuevaAlta();
     }//GEN-LAST:event_jMenuItem_altasActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        calcularCambio();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,6 +196,7 @@ public class Escritorio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem_altas;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_escritorio;

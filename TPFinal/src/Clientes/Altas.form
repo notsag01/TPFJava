@@ -270,6 +270,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_cuil">
           <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_cuilActionPerformed"/>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField_cuilKeyTyped"/>
           </Events>
         </Component>

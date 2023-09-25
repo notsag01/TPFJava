@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Altas extends javax.swing.JInternalFrame {
     boolean arroba=false,punto=false;       
-    String mail;
+    String id, nombre,apellido,mail,fechaNacimiento,domicilio,localidad,provincia,estadoCivil,hijos;
     private String usuario;
     
     
@@ -92,6 +92,7 @@ public class Altas extends javax.swing.JInternalFrame {
         if(arroba&&punto){
             JOptionPane.showMessageDialog(null, "El formularioa fue ingresado correctamente",
                     "Validacion Confirmada",JOptionPane.INFORMATION_MESSAGE);
+                    getDatosClientes();
                     arroba=false;
                     punto=false;
                     limpiarFormulario();
@@ -113,6 +114,28 @@ public class Altas extends javax.swing.JInternalFrame {
         jComboBox_genero.setSelectedIndex(0);
         jComboBox_provincias.setSelectedIndex(0);
         jComboBox_estadoCivil.setSelectedIndex(0);
+    }
+    private void getDatosClientes(){
+        id=jTextField_cuil.getText();        
+        nombre=jTextField_nombre.getText();        
+        apellido=jTextField_apellido.getText();        
+        mail=jTextField_mail.getText();        
+    }
+    //    String id, nombre,apellido,mail,fechaNacimiento,domicilio,localidad,provincia,estadoCivil,hijos;
+    private void guardarCliente(){
+        Clientes cliente = new Clientes(
+                id,
+                nombre,
+                apellido,
+                mail,
+                fechaNacimiento,
+                domicilio,
+                localidad,
+                provincia,
+                estadoCivil,
+                hijos
+        );
+        
     }
 
     /**
@@ -217,6 +240,11 @@ public class Altas extends javax.swing.JInternalFrame {
 
         jComboBox_genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "MASCULINO", "FEMENINO" }));
 
+        jTextField_cuil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_cuilActionPerformed(evt);
+            }
+        });
         jTextField_cuil.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField_cuilKeyTyped(evt);
@@ -502,6 +530,10 @@ public class Altas extends javax.swing.JInternalFrame {
     private void jButton_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_limpiarActionPerformed
         limpiarFormulario();
     }//GEN-LAST:event_jButton_limpiarActionPerformed
+
+    private void jTextField_cuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_cuilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_cuilActionPerformed
 
     /**
      * @param args the command line arguments

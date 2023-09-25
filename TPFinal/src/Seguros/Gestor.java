@@ -19,7 +19,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     private Timer timer;
      String[] frases = {
          "Seguros",
-         "La Tercera",
+         "Dinero Movil",
          "Dormí tranquilo"
      };
      private int indice=0;
@@ -70,44 +70,19 @@ public class Gestor extends javax.swing.JInternalFrame {
     String terceroCompleto,responsabilidadCivil, todoRiesgoCF,todoRiesgoSF,granizo, franquicia;    
     boolean arroba=false, punto=false;
     
-    public void validarMail(String seguro){
-         String cadena=jTextField_mail.getText();
-                
-        for(int i=0; i<cadena.length();i++){
-            char caracter= cadena.charAt(i);
-            System.out.print(caracter);
-            if(caracter=='@'){
-                arroba=true;
-            }else if(caracter=='.'){
-                punto=true;
-            }
-            
+    public void getData(String seguro){
+         
+        switch(seguro){
+            case "seguro vehicular":
+                    getDatosPerosonaVehiculos();
+            break;
+            case "seguro hogar":
+                    getDatosPerosonaHogar();
+            break;
+            case"seguro vida":
+                    getDatosPerosonaVida();
+            break;
         }
-        
-        if(arroba && punto){
-            switch(seguro){
-                case "seguro vehicular":
-                        getDatosPerosonaVehiculos();
-                        System.out.println("La Cadena es Valida");
-                break;
-                case "seguro hogar":
-                        getDatosPerosonaHogar();
-                        System.out.println("La Cadena es Valida");
-                break;
-                case"seguro vida":
-                        getDatosPerosonaVida();
-                        System.out.println("La Cadena es Valida");
-                break;
-            }
-                invalidarMail();
-            
-        }else{
-            System.out.println("La Cadena no es Valida");
-        }
-    }
-    public void invalidarMail(){
-        arroba=false;
-        punto=false;        
     }
         
     public void getDatosPerosonaHogar(){
@@ -1338,17 +1313,24 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextField_nombre.setEditable(false);
+        jTextField_nombre.setEnabled(false);
         jTextField_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField_nombreKeyTyped(evt);
             }
         });
 
+        jTextField_telefono.setEditable(false);
+        jTextField_telefono.setEnabled(false);
         jTextField_telefono.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField_telefonoKeyTyped(evt);
             }
         });
+
+        jTextField_mail.setEditable(false);
+        jTextField_mail.setEnabled(false);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1548,7 +1530,7 @@ public class Gestor extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String seguro= "seguro vida";
-        validarMail(seguro);        
+        getData(seguro);     
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jComboBox_marcasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_marcasItemStateChanged
@@ -1641,13 +1623,13 @@ public class Gestor extends javax.swing.JInternalFrame {
 
     private void jButton_seguroVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_seguroVehiculosActionPerformed
         String seguro= "seguro vehicular";
-        validarMail(seguro);
+        getData(seguro);
         
     }//GEN-LAST:event_jButton_seguroVehiculosActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String seguro= "seguro hogar";
-        validarMail(seguro);
+        getData(seguro);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox_incendioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox_incendioItemStateChanged

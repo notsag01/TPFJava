@@ -24,10 +24,23 @@ public class EncontrarClientes {
             BufferedReader br = new BufferedReader(new FileReader(rutaArchivo));
             String linea;
             int numeroLinea=0;
-            
+                        
             try {
                 while((linea = br.readLine()) != null){
                     numeroLinea++;
+                    String[] datos=linea.split(",");
+                    
+                    if(datos.length>=2){
+                        String nombreCliente=datos[1].trim();
+                        
+                        if(nombreCliente.contains(id)){
+                            System.out.println(id);
+                            System.out.println(nombreCliente);
+                        }else{
+                            System.out.println("No se encontró el registro");
+                        }
+                    }
+                    
                     if(linea.contains(id)){
                         System.out.println(id);
                     }else{

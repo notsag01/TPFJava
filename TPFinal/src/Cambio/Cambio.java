@@ -1,6 +1,7 @@
 package Cambio;
 
 
+import Clientes.EncontrarClientes;
 import javax.swing.JOptionPane;
 
 
@@ -66,6 +67,11 @@ public class Cambio extends javax.swing.JInternalFrame {
         initComponents();
         
         this.usuario=usuario;
+    }
+    
+    public void buscarID(String id){
+        EncontrarClientes encontrarCliente = new EncontrarClientes(id);
+        encontrarCliente.buscarCliente();
     }
 
     /**
@@ -361,7 +367,8 @@ public class Cambio extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox_monedaActionPerformed
 
     private void jButton_lupaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_lupaActionPerformed
-        //buscar();
+        String id=jTextField_id.getText();
+        buscarID(id);
     }//GEN-LAST:event_jButton_lupaActionPerformed
 
     private void jTextField_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_idKeyTyped

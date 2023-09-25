@@ -30,19 +30,16 @@ public class EncontrarClientes {
                     numeroLinea++;
                     String[] datos=linea.split(",");
                     
+                    
                     if(datos.length>=2){
+                        String idCliente=datos[0].trim();
                         String nombreCliente=datos[1].trim();
                         
-                        if(nombreCliente.contains(id)){
-                            System.out.println(id);
+                        if(idCliente.equals(id)){
+                            System.out.println(idCliente);
                             System.out.println(nombreCliente);
-                        }else{
-                            System.out.println("No se encontró el registro");
+                            break;
                         }
-                    }
-                    
-                    if(linea.contains(id)){
-                        System.out.println(id);
                     }else{
                         System.out.println("No se encontró el registro");
                     }

@@ -120,6 +120,15 @@ public class Altas extends javax.swing.JInternalFrame {
         nombre=jTextField_nombre.getText();        
         apellido=jTextField_apellido.getText();        
         mail=jTextField_mail.getText();        
+        fechaNacimiento=jTextField_fechaNacimiento.getText();        
+        domicilio=jTextField_domicilio.getText();        
+        localidad=jTextField_localidad.getText();        
+        localidad=jTextField_localidad.getText();        
+        provincia=(String)jComboBox_provincias.getSelectedItem();
+        estadoCivil=(String)jComboBox_estadoCivil.getSelectedItem();
+        hijos=jTextField_hijos.getText();        
+        
+        guardarCliente();
     }
     //    String id, nombre,apellido,mail,fechaNacimiento,domicilio,localidad,provincia,estadoCivil,hijos;
     private void guardarCliente(){
@@ -135,7 +144,8 @@ public class Altas extends javax.swing.JInternalFrame {
                 estadoCivil,
                 hijos
         );
-        
+        ArchivoClientes archivoClientes=new ArchivoClientes();
+        archivoClientes.escribirArchivo(cliente);
     }
 
     /**

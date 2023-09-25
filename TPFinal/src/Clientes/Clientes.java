@@ -27,4 +27,45 @@ public class Clientes {
         this.estadoCivil=estadoCivil;
         this.hijos=hijos;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public String getHijos() {
+        return hijos;
+    }
+    
 }

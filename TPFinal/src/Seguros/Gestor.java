@@ -14,7 +14,7 @@ import javax.swing.border.Border;
 
 
 public class Gestor extends javax.swing.JInternalFrame {
-
+    private String usuario;
     
     private Timer timer;
      String[] frases = {
@@ -23,6 +23,10 @@ public class Gestor extends javax.swing.JInternalFrame {
          "Dormí tranquilo"
      };
      private int indice=0;
+
+    private Gestor() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
      public void frasesAleatorias(){
          timer = new Timer(3000, new ActionListener(){
              @Override
@@ -37,7 +41,7 @@ public class Gestor extends javax.swing.JInternalFrame {
      
      
 
-    public Gestor() {
+    public Gestor(String usuario) {
         initComponents();
         //this.setLocationRelativeTo(null);        
         frasesAleatorias(); 
@@ -53,6 +57,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         jComboBox_beneficiario3.setEnabled(false);
         jComboBox_beneficiario4.setEnabled(false);
         
+        this.usuario=usuario;
     }
     
     String tipoSeguro, cuit, nombre,telefono, mail;

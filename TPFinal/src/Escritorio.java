@@ -21,7 +21,7 @@ public class Escritorio extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     private void abrirSeguros(){
-        Gestor gestor = new Gestor();
+        Gestor gestor = new Gestor(usuario);
         gestor.setVisible(true);
         jPanel_escritorio.add(gestor);
     }

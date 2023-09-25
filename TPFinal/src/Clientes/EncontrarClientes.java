@@ -34,11 +34,13 @@ public class EncontrarClientes {
                     if(datos.length>=2){
                         String idCliente=datos[0].trim();
                         String nombreCliente=datos[1].trim();
+                        String apellidoCliente=datos[2].trim();
                         
                         if(idCliente.equals(id)){
                             System.out.println(idCliente);
                             System.out.println(nombreCliente);
                             nombre=nombreCliente;
+                            apellido=apellidoCliente;
                             break;
                         }
                     }else{

@@ -72,6 +72,7 @@ public class Cambio extends javax.swing.JInternalFrame {
     public void buscarID(String id){
         EncontrarClientes encontrarCliente = new EncontrarClientes(id);
         encontrarCliente.buscarCliente();
+        jTextField_nombreCliente.setText(encontrarCliente.getNombre());
     }
 
     /**
@@ -89,7 +90,7 @@ public class Cambio extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jTextField_id = new javax.swing.JTextField();
         jButton_lupa = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextField_nombreCliente = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -137,7 +138,7 @@ public class Cambio extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_nombreCliente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,7 +149,7 @@ public class Cambio extends javax.swing.JInternalFrame {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
+                    .addComponent(jTextField_nombreCliente)
                     .addComponent(jTextField_id, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addComponent(jButton_lupa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,7 +165,7 @@ public class Cambio extends javax.swing.JInternalFrame {
                         .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton_lupa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -409,11 +410,11 @@ public class Cambio extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField_cambio;
     private javax.swing.JTextField jTextField_id;
     private javax.swing.JTextField jTextField_impuestoPais;
     private javax.swing.JTextField jTextField_impuestosGcias;
+    private javax.swing.JTextField jTextField_nombreCliente;
     private javax.swing.JTextField jTextField_pesos;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 
 public class EncontrarClientes {
-    String id;
+    String id,nombre,apellido;
     
     public EncontrarClientes(String id){
         this.id=id;
@@ -38,6 +38,7 @@ public class EncontrarClientes {
                         if(idCliente.equals(id)){
                             System.out.println(idCliente);
                             System.out.println(nombreCliente);
+                            nombre=nombreCliente;
                             break;
                         }
                     }else{
@@ -52,4 +53,17 @@ public class EncontrarClientes {
         }
         
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+    
 }

@@ -77,6 +77,8 @@ public class Cambio extends javax.swing.JInternalFrame {
     public void cambiar(){
         if(jTextField_nombreCliente.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Ingrese su Cuit");
+        }else{
+            
         }
     }
 

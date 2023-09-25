@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Altas extends javax.swing.JInternalFrame {
     boolean arroba=false,punto=false;       
-    String id, nombre,apellido,mail,fechaNacimiento,domicilio,localidad,provincia,estadoCivil,hijos;
+    String id, nombre,apellido,mail,fechaNacimiento,genero,domicilio,localidad,provincia,estadoCivil,hijos;
     private String usuario;
     
     
@@ -125,6 +125,7 @@ public class Altas extends javax.swing.JInternalFrame {
         localidad=jTextField_localidad.getText();        
         localidad=jTextField_localidad.getText();        
         provincia=(String)jComboBox_provincias.getSelectedItem();
+        genero=(String)jComboBox_genero.getSelectedItem();
         estadoCivil=(String)jComboBox_estadoCivil.getSelectedItem();
         hijos=jTextField_hijos.getText();        
         
@@ -138,6 +139,7 @@ public class Altas extends javax.swing.JInternalFrame {
                 apellido,
                 mail,
                 fechaNacimiento,
+                genero,
                 domicilio,
                 localidad,
                 provincia,

@@ -9,7 +9,7 @@ public class Cambio extends javax.swing.JInternalFrame {
     double dolarBlue=522, dolarOficial=281.5, euro=297.28, real=55.22;
     double cantidadPesos, cambio, impPais, impGcias;
     int eleccionMoneda;
-    String id;
+    String id,nombre,apellido;
     
     private String usuario;
     
@@ -73,14 +73,25 @@ public class Cambio extends javax.swing.JInternalFrame {
     public void buscarID(String id){
         EncontrarClientes encontrarCliente = new EncontrarClientes(id);
         encontrarCliente.buscarCliente();
+        nombre=encontrarCliente.getNombre();
+        apellido=encontrarCliente.getApellido();
         jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
     }
     public void cambiar(){
         if(jTextField_nombreCliente.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Ingrese su Cuit");
         }else{
-            
+            CambioClientes cambioClientes = new CambioClientes(usuario,id,nombre,apellido);
+            CambioArchivo cambioArchivo = new CambioArchivo();
+            cambioArchivo.guardarInfo(cambioClientes);
         }
+    }
+    public void limpiarInformacion(){
+        jTextField_pesos.setText("");
+        jTextField_impuestoPais.setText("");
+        jTextField_impuestosGcias.setText("");
+        jTextField_cambio.setText("");
+        jComboBox_moneda.setSelectedIndex(0);
     }
 
     /**

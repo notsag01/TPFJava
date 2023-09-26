@@ -1,1 +1,2 @@
 Seguro Hogar,,,,,Parcial,-,-,Heladera,-,-,-,null,-,-,null
+Seguro Hogar,11111111111,Fulan DeTal,null,null,Parcial,Total,-,Cocina,-,null,-,null,-,Televisor,1

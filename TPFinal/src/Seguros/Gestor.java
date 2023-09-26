@@ -10,6 +10,7 @@ import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.border.Border;
 
@@ -70,6 +71,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     String dominio, marcaSelec,modeloSelec,anio;
     String terceroCompleto,responsabilidadCivil, todoRiesgoCF,todoRiesgoSF,granizo, franquicia;    
     boolean arroba=false, punto=false;
+    String id;
     
     public void getData(String seguro){
          
@@ -89,7 +91,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     public void getDatosPerosonaHogar(){
         tipoSeguro="Seguro Hogar"; 
         cuit=jTextField_id.getText();
-        nombre=jTextField_nombre.getText();
+        nombre=jTextField_nombreCliente.getText();
         
         incendio=(String)jComboBox_incendio.getSelectedItem();
         if(incendio.equals("")){
@@ -152,7 +154,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     public void getDatosPerosonaVida(){
         tipoSeguro="Seguro Vida";
         cuit=jTextField_id.getText();
-        nombre=jTextField_nombre.getText();
+        nombre=jTextField_nombreCliente.getText();
         
          if(jCheckBox_muerte.isSelected()){
             muerte=jCheckBox_muerte.getText();
@@ -225,7 +227,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         public void getDatosPerosonaVehiculos(){
             tipoSeguro="Seguro Automotor";
             cuit=jTextField_id.getText();
-            nombre=jTextField_nombre.getText();
+            nombre=jTextField_nombreCliente.getText();
             
             dominio=jTextField_dominio.getText().toUpperCase();
             marcaSelec=(String)jComboBox_marcas.getSelectedItem();
@@ -266,7 +268,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         
         public void limpiarDatos(){
         jTextField_id.setText("");
-        jTextField_nombre.setText("");
+        jTextField_nombreCliente.setText("");
         }
         public void limpiarDatosPersonaHogar(){
            jCheckBox_incendio.setSelected(false);
@@ -324,9 +326,10 @@ public class Gestor extends javax.swing.JInternalFrame {
         
         private void buscarID(String id){
             EncontrarClientes encontrarCliente = new EncontrarClientes(id);
-             encontrarCliente.buscarCliente();
-            jTextField_nombre.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            encontrarCliente.buscarCliente();
+            jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
         }
+        
     
 
     /**
@@ -360,7 +363,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         jTextField_notebooksCantidad = new javax.swing.JTextField();
         jTextField_televisorCantidad = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jButton_contratarHogar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton_contratacionesHogar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -383,7 +386,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         jComboBox_beneficiario3 = new javax.swing.JComboBox<>();
         jComboBox_beneficiario4 = new javax.swing.JComboBox<>();
         jPanel15 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        jButton_contratarVida = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton_contratacionesVida = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -419,7 +422,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextField_id = new javax.swing.JTextField();
-        jTextField_nombre = new javax.swing.JTextField();
+        jTextField_nombreCliente = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -648,13 +651,13 @@ public class Gestor extends javax.swing.JInternalFrame {
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Contratar");
-        jButton1.setMaximumSize(new java.awt.Dimension(72, 27));
-        jButton1.setMinimumSize(new java.awt.Dimension(72, 27));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton_contratarHogar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_contratarHogar.setText("Contratar");
+        jButton_contratarHogar.setMaximumSize(new java.awt.Dimension(72, 27));
+        jButton_contratarHogar.setMinimumSize(new java.awt.Dimension(72, 27));
+        jButton_contratarHogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton_contratarHogarActionPerformed(evt);
             }
         });
 
@@ -684,7 +687,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_contratarHogar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -692,7 +695,7 @@ public class Gestor extends javax.swing.JInternalFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_contratarHogar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_contratacionesHogar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -893,11 +896,11 @@ public class Gestor extends javax.swing.JInternalFrame {
 
         jPanel15.setOpaque(false);
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setText("Contratar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton_contratarVida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_contratarVida.setText("Contratar");
+        jButton_contratarVida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton_contratarVidaActionPerformed(evt);
             }
         });
 
@@ -927,7 +930,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_contratarVida, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(
@@ -935,7 +938,7 @@ public class Gestor extends javax.swing.JInternalFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(jButton_contratarVida)
                     .addComponent(jButton4)
                     .addComponent(jButton_contratacionesVida, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -1301,11 +1304,11 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField_nombre.setEditable(false);
-        jTextField_nombre.setEnabled(false);
-        jTextField_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextField_nombreCliente.setEditable(false);
+        jTextField_nombreCliente.setEnabled(false);
+        jTextField_nombreCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField_nombreKeyTyped(evt);
+                jTextField_nombreClienteKeyTyped(evt);
             }
         });
 
@@ -1415,7 +1418,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton7))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jTextField_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 41, Short.MAX_VALUE))
@@ -1438,7 +1441,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel_frases, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1505,10 +1508,15 @@ public class Gestor extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox_heladeraActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String seguro= "seguro vida";
-        getData(seguro);     
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jButton_contratarVidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_contratarVidaActionPerformed
+        if(jTextField_nombreCliente.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Ingrese su Cuit");
+        }else{
+            String seguro= "seguro vida";
+            getData(seguro);             
+        }
+        
+    }//GEN-LAST:event_jButton_contratarVidaActionPerformed
 
     private void jComboBox_marcasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_marcasItemStateChanged
         ////////////   SECCION VEHICULOS   ///////////////////////////////
@@ -1599,15 +1607,23 @@ public class Gestor extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jCheckBox_granizoItemStateChanged
 
     private void jButton_seguroVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_seguroVehiculosActionPerformed
-        String seguro= "seguro vehicular";
-        getData(seguro);
-        
+        if(jTextField_nombreCliente.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Ingrese su Cuit");
+        }else{
+            String seguro= "seguro vehicular";
+            getData(seguro);        
+        }        
     }//GEN-LAST:event_jButton_seguroVehiculosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String seguro= "seguro hogar";
-        getData(seguro);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton_contratarHogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_contratarHogarActionPerformed
+    
+        if(jTextField_nombreCliente.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Ingrese su Cuit");
+        }else{
+            String seguro= "seguro hogar";
+            getData(seguro);    
+        }            
+    }//GEN-LAST:event_jButton_contratarHogarActionPerformed
 
     private void jCheckBox_incendioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox_incendioItemStateChanged
        if(jCheckBox_incendio.isSelected()){
@@ -1683,7 +1699,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jTextField_beneficiario4KeyPressed
 
-    private void jTextField_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_nombreKeyTyped
+    private void jTextField_nombreClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_nombreClienteKeyTyped
         int key=evt.getKeyChar();
         boolean minuscula=key>=97 && key<=122;
         boolean mayuscula=key>=65 && key<=90;
@@ -1692,10 +1708,10 @@ public class Gestor extends javax.swing.JInternalFrame {
         if(!(minuscula||espacio||mayuscula)){
             evt.consume();
         }
-        if(jTextField_nombre.getText().length()>=50){
+        if(jTextField_nombreCliente.getText().length()>=50){
             evt.consume();
         }
-    }//GEN-LAST:event_jTextField_nombreKeyTyped
+    }//GEN-LAST:event_jTextField_nombreClienteKeyTyped
 
     private void jTextField_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_idKeyTyped
        int key = evt.getKeyChar();
@@ -1817,9 +1833,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -1827,6 +1841,8 @@ public class Gestor extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton_contratacinonesVehiculos;
     private javax.swing.JButton jButton_contratacionesHogar;
     private javax.swing.JButton jButton_contratacionesVida;
+    private javax.swing.JButton jButton_contratarHogar;
+    private javax.swing.JButton jButton_contratarVida;
     private javax.swing.JButton jButton_seguroVehiculos;
     private javax.swing.JCheckBox jCheckBox_cocina;
     private javax.swing.JCheckBox jCheckBox_consola;
@@ -1907,7 +1923,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField_dominio;
     private javax.swing.JTextField jTextField_id;
     private javax.swing.JTextField jTextField_internacionDias;
-    private javax.swing.JTextField jTextField_nombre;
+    private javax.swing.JTextField jTextField_nombreCliente;
     private javax.swing.JTextField jTextField_notebooksCantidad;
     private javax.swing.JTextField jTextField_televisorCantidad;
     // End of variables declaration//GEN-END:variables

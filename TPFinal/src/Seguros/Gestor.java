@@ -1,6 +1,7 @@
 package Seguros;
 
 
+import Clientes.EncontrarClientes;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -89,8 +90,6 @@ public class Gestor extends javax.swing.JInternalFrame {
         tipoSeguro="Seguro Hogar"; 
         cuit=jTextField_id.getText();
         nombre=jTextField_nombre.getText();
-        telefono=jTextField_telefono.getText();
-        mail=jTextField_mail.getText();
         
         incendio=(String)jComboBox_incendio.getSelectedItem();
         if(incendio.equals("")){
@@ -154,8 +153,6 @@ public class Gestor extends javax.swing.JInternalFrame {
         tipoSeguro="Seguro Vida";
         cuit=jTextField_id.getText();
         nombre=jTextField_nombre.getText();
-        telefono=jTextField_telefono.getText();
-        mail=jTextField_mail.getText();
         
          if(jCheckBox_muerte.isSelected()){
             muerte=jCheckBox_muerte.getText();
@@ -229,8 +226,6 @@ public class Gestor extends javax.swing.JInternalFrame {
             tipoSeguro="Seguro Automotor";
             cuit=jTextField_id.getText();
             nombre=jTextField_nombre.getText();
-            telefono=jTextField_telefono.getText();
-            mail=jTextField_mail.getText();
             
             dominio=jTextField_dominio.getText().toUpperCase();
             marcaSelec=(String)jComboBox_marcas.getSelectedItem();
@@ -272,8 +267,6 @@ public class Gestor extends javax.swing.JInternalFrame {
         public void limpiarDatos(){
         jTextField_id.setText("");
         jTextField_nombre.setText("");
-        jTextField_telefono.setText("");
-        jTextField_mail.setText("");
         }
         public void limpiarDatosPersonaHogar(){
            jCheckBox_incendio.setSelected(false);
@@ -327,6 +320,12 @@ public class Gestor extends javax.swing.JInternalFrame {
             jCheckBox_todoRiesgoCF.setSelected(false);
             jCheckBox_granizo.setSelected(false);
             jTextField_anio.setText("");
+        }
+        
+        private void buscarID(String id){
+            EncontrarClientes encontrarCliente = new EncontrarClientes(id);
+             encontrarCliente.buscarCliente();
+            jTextField_nombre.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
         }
     
 
@@ -419,12 +418,8 @@ public class Gestor extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jTextField_id = new javax.swing.JTextField();
         jTextField_nombre = new javax.swing.JTextField();
-        jTextField_telefono = new javax.swing.JTextField();
-        jTextField_mail = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -435,6 +430,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         jLabel_frases = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -1294,14 +1290,6 @@ public class Gestor extends javax.swing.JInternalFrame {
         jLabel2.setText("NOMBRE Y APELLIDO");
         jLabel2.setPreferredSize(new java.awt.Dimension(150, 20));
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("TELEFONO");
-        jLabel3.setPreferredSize(new java.awt.Dimension(150, 20));
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("MAIL");
-        jLabel4.setPreferredSize(new java.awt.Dimension(150, 20));
-
         jTextField_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_idActionPerformed(evt);
@@ -1320,17 +1308,6 @@ public class Gestor extends javax.swing.JInternalFrame {
                 jTextField_nombreKeyTyped(evt);
             }
         });
-
-        jTextField_telefono.setEditable(false);
-        jTextField_telefono.setEnabled(false);
-        jTextField_telefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField_telefonoKeyTyped(evt);
-            }
-        });
-
-        jTextField_mail.setEditable(false);
-        jTextField_mail.setEnabled(false);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1365,6 +1342,7 @@ public class Gestor extends javax.swing.JInternalFrame {
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
@@ -1384,7 +1362,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jPanel6.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, 230));
@@ -1408,6 +1386,13 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.jpg"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -1418,27 +1403,26 @@ public class Gestor extends javax.swing.JInternalFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(5, 5, 5)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(5, 5, 5))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jTextField_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton7))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jTextField_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 41, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel_frases, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45)
+                        .addComponent(jLabel_frases, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)))
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1448,21 +1432,14 @@ public class Gestor extends javax.swing.JInternalFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton5))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel_frases, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1732,18 +1709,6 @@ public class Gestor extends javax.swing.JInternalFrame {
        }
     }//GEN-LAST:event_jTextField_idKeyTyped
 
-    private void jTextField_telefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_telefonoKeyTyped
-        int key=evt.getKeyChar();
-        boolean numeros=key>=48 && key<=57;
-        
-        if(!numeros){
-            evt.consume();
-        }
-        if(jTextField_telefono.getText().length()>=11){
-            evt.consume();
-        }
-    }//GEN-LAST:event_jTextField_telefonoKeyTyped
-
     private void jTextField_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_idActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_idActionPerformed
@@ -1808,6 +1773,11 @@ public class Gestor extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jTextField_anioKeyTyped
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+         String id=jTextField_id.getText();
+         buscarID(id);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1853,6 +1823,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton_contratacinonesVehiculos;
     private javax.swing.JButton jButton_contratacionesHogar;
     private javax.swing.JButton jButton_contratacionesVida;
@@ -1898,8 +1869,6 @@ public class Gestor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1938,10 +1907,8 @@ public class Gestor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField_dominio;
     private javax.swing.JTextField jTextField_id;
     private javax.swing.JTextField jTextField_internacionDias;
-    private javax.swing.JTextField jTextField_mail;
     private javax.swing.JTextField jTextField_nombre;
     private javax.swing.JTextField jTextField_notebooksCantidad;
-    private javax.swing.JTextField jTextField_telefono;
     private javax.swing.JTextField jTextField_televisorCantidad;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,6 +9,7 @@ public class Cambio extends javax.swing.JInternalFrame {
     double dolarBlue=522, dolarOficial=281.5, euro=297.28, real=55.22;
     double cantidadPesos, cambio, impPais, impGcias;
     int eleccionMoneda;
+    String id;
     
     private String usuario;
     
@@ -161,7 +162,7 @@ public class Cambio extends javax.swing.JInternalFrame {
                     .addComponent(jTextField_id, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addComponent(jButton_lupa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

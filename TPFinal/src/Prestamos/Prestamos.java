@@ -5,22 +5,34 @@ import javax.swing.JOptionPane;
 
 
 public class Prestamos extends javax.swing.JInternalFrame {
-    boolean arroba=false,punto=false;       
-    String id, nombre,apellido,mail,fechaNacimiento,genero,domicilio,localidad,provincia,estadoCivil,hijos;
+    int interesMinimo=80,interesMedio=100,interesMaximo=150;  
     private String usuario;
     
     
     public Prestamos(String usuario) {
         initComponents();
-        this.setTitle("Alta Clientes");                
+        this.setTitle("Prestamos");                
 
         
         this.usuario = usuario;
+        
+        
     }
 
     private Prestamos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }    
+    }  
+    
+    private void valorarIntereses(){
+        int time = jComboBox_tiempo.getSelectedIndex();
+        if(time==0){
+            jTextField_intereses.setText(String.valueOf(interesMinimo));
+        }else if(time==1||time==2){
+            jTextField_intereses.setText(String.valueOf(interesMedio));            
+        }else{
+            jTextField_intereses.setText(String.valueOf(interesMaximo));            
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,12 +49,14 @@ public class Prestamos extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField_domicilio = new javax.swing.JTextField();
-        jComboBox_provincias = new javax.swing.JComboBox<>();
+        jTextField_capital = new javax.swing.JTextField();
+        jComboBox_tiempo = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
-        jButton_comenzar = new javax.swing.JButton();
+        jButton_calcualar = new javax.swing.JButton();
         jButton_limpiar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField_intereses = new javax.swing.JTextField();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -75,23 +89,39 @@ public class Prestamos extends javax.swing.JInternalFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("TIEMPO");
 
-        jComboBox_provincias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "12", "36", "48", "96" }));
-        jComboBox_provincias.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_capital.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField_capitalKeyTyped(evt);
+            }
+        });
+
+        jComboBox_tiempo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "12", "24", "36", "48", "96" }));
+        jComboBox_tiempo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox_tiempoItemStateChanged(evt);
+            }
+        });
+        jComboBox_tiempo.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jComboBox_tiempoComponentShown(evt);
+            }
+        });
+        jComboBox_tiempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_provinciasActionPerformed(evt);
+                jComboBox_tiempoActionPerformed(evt);
             }
         });
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
 
-        jButton_comenzar.setBackground(new java.awt.Color(102, 102, 255));
-        jButton_comenzar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton_comenzar.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_comenzar.setText("CREAR");
-        jButton_comenzar.addActionListener(new java.awt.event.ActionListener() {
+        jButton_calcualar.setBackground(new java.awt.Color(102, 102, 255));
+        jButton_calcualar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton_calcualar.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_calcualar.setText("CALCULAR");
+        jButton_calcualar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_comenzarActionPerformed(evt);
+                jButton_calcualarActionPerformed(evt);
             }
         });
 
@@ -125,7 +155,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jButton_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton_comenzar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_calcualar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
         jPanel3Layout.setVerticalGroup(
@@ -133,11 +163,16 @@ public class Prestamos extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_comenzar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_calcualar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("INTERESES");
+
+        jTextField_intereses.setEditable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -146,31 +181,39 @@ public class Prestamos extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField_intereses))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jComboBox_provincias, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField_domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField_capital, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addGap(254, 254, 254)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField_capital, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jComboBox_provincias, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(186, 186, 186)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_intereses, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(160, 160, 160)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 47, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 610));
@@ -184,17 +227,37 @@ public class Prestamos extends javax.swing.JInternalFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton_comenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_comenzarActionPerformed
+    private void jButton_calcualarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_calcualarActionPerformed
 
-    }//GEN-LAST:event_jButton_comenzarActionPerformed
+    }//GEN-LAST:event_jButton_calcualarActionPerformed
 
     private void jButton_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_limpiarActionPerformed
 
     }//GEN-LAST:event_jButton_limpiarActionPerformed
 
-    private void jComboBox_provinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_provinciasActionPerformed
+    private void jComboBox_tiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_tiempoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox_provinciasActionPerformed
+    }//GEN-LAST:event_jComboBox_tiempoActionPerformed
+
+    private void jTextField_capitalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_capitalKeyTyped
+        int key=evt.getKeyChar();
+        boolean numeros=key>=48&&key<=57;
+        
+        if(!numeros){
+            evt.consume();
+        }
+        if(jTextField_capital.getText().length()>6){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField_capitalKeyTyped
+
+    private void jComboBox_tiempoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jComboBox_tiempoComponentShown
+        
+    }//GEN-LAST:event_jComboBox_tiempoComponentShown
+
+    private void jComboBox_tiempoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_tiempoItemStateChanged
+        valorarIntereses();
+    }//GEN-LAST:event_jComboBox_tiempoItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -236,16 +299,18 @@ public class Prestamos extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton_comenzar;
+    private javax.swing.JButton jButton_calcualar;
     private javax.swing.JButton jButton_limpiar;
-    private javax.swing.JComboBox<String> jComboBox_provincias;
+    private javax.swing.JComboBox<String> jComboBox_tiempo;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField_domicilio;
+    private javax.swing.JTextField jTextField_capital;
+    private javax.swing.JTextField jTextField_intereses;
     // End of variables declaration//GEN-END:variables
 }

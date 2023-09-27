@@ -16,7 +16,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
         
         this.usuario = usuario;
         
-        
+        jTextField_intereses.setText("80");
     }
 
     private Prestamos() {

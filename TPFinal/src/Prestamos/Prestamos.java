@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 
 public class Prestamos extends javax.swing.JInternalFrame {
-    int interesMinimo=80,interesMedio=100,interesMaximo=150;  
+    int interesMinimo=80,interesMedio=100,interesMaximo=150,capital, meses,intereses;  
     private String usuario;
     
     
@@ -33,6 +33,36 @@ public class Prestamos extends javax.swing.JInternalFrame {
             jTextField_intereses.setText(String.valueOf(interesMaximo));            
         }
     }
+    
+    private double calcularFinal(double capital, double interes){
+        double finalCapital = capital + (capital * (interes / 100));
+        return finalCapital;
+    }
+
+    
+    private void calcularMonto(){
+        capital=(int) Double.parseDouble(jTextField_capital.getText());
+        int time = jComboBox_tiempo.getSelectedIndex();
+        
+        switch(time){
+            case 0: meses=12;
+            break;
+            case 1: meses=24;
+            break;
+            case 2: meses=36;
+            break;
+            case 3: meses=48;
+            break;
+            case 4: meses=9;
+            break;
+        }
+        
+        intereses=(int)Double.parseDouble(jTextField_intereses.getText());
+        
+        double capitalFinal=calcularFinal(capital,intereses);
+        
+        jTextField_deuda.setText(String.format("$%,.2f", capitalFinal));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,6 +87,8 @@ public class Prestamos extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jTextField_intereses = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField_deuda = new javax.swing.JTextField();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -174,6 +206,9 @@ public class Prestamos extends javax.swing.JInternalFrame {
 
         jTextField_intereses.setEditable(false);
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Monto a devolver");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -195,6 +230,12 @@ public class Prestamos extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jTextField_capital, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField_deuda)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                .addGap(82, 82, 82))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,9 +252,13 @@ public class Prestamos extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField_intereses, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(160, 160, 160)
+                .addGap(51, 51, 51)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_deuda, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 610));
@@ -228,7 +273,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton_calcualarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_calcualarActionPerformed
-
+        calcularMonto();
     }//GEN-LAST:event_jButton_calcualarActionPerformed
 
     private void jButton_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_limpiarActionPerformed
@@ -302,6 +347,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton_calcualar;
     private javax.swing.JButton jButton_limpiar;
     private javax.swing.JComboBox<String> jComboBox_tiempo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel6;
@@ -311,6 +357,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField_capital;
+    private javax.swing.JTextField jTextField_deuda;
     private javax.swing.JTextField jTextField_intereses;
     // End of variables declaration//GEN-END:variables
 }

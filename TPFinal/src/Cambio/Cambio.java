@@ -82,6 +82,8 @@ public class Cambio extends javax.swing.JInternalFrame {
             Archivo archivo = new Archivo();
             archivo.guardarInfo(cambioClientes);
             
+            JOptionPane.showMessageDialog(null, "La transacción fue realizada \n Existosamente");
+            
             limpiarInformacion();
         }
     }

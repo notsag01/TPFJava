@@ -441,8 +441,9 @@ public class Gestor extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(750, 650));
 
-        jTabbedPane_seguroHogar.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane_seguroHogar.setBackground(new java.awt.Color(102, 102, 255));
         jTabbedPane_seguroHogar.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 0, 51)), new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(102, 102, 255), null, null)));
+        jTabbedPane_seguroHogar.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane_seguroHogar.setOpaque(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -652,7 +653,9 @@ public class Gestor extends javax.swing.JInternalFrame {
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
+        jButton_contratarHogar.setBackground(new java.awt.Color(102, 102, 255));
         jButton_contratarHogar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_contratarHogar.setForeground(new java.awt.Color(255, 255, 255));
         jButton_contratarHogar.setText("Contratar");
         jButton_contratarHogar.setMaximumSize(new java.awt.Dimension(72, 27));
         jButton_contratarHogar.setMinimumSize(new java.awt.Dimension(72, 27));
@@ -662,7 +665,9 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(102, 102, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -670,7 +675,9 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton_contratacionesHogar.setBackground(new java.awt.Color(102, 102, 255));
         jButton_contratacionesHogar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_contratacionesHogar.setForeground(new java.awt.Color(255, 255, 255));
         jButton_contratacionesHogar.setText("Contrataciones");
         jButton_contratacionesHogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -897,7 +904,9 @@ public class Gestor extends javax.swing.JInternalFrame {
 
         jPanel15.setOpaque(false);
 
+        jButton_contratarVida.setBackground(new java.awt.Color(102, 102, 255));
         jButton_contratarVida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_contratarVida.setForeground(new java.awt.Color(255, 255, 255));
         jButton_contratarVida.setText("Contratar");
         jButton_contratarVida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -905,7 +914,9 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(102, 102, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Salir");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -913,7 +924,9 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton_contratacionesVida.setBackground(new java.awt.Color(102, 102, 255));
         jButton_contratacionesVida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_contratacionesVida.setForeground(new java.awt.Color(255, 255, 255));
         jButton_contratacionesVida.setText("Contrataciones");
         jButton_contratacionesVida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1203,7 +1216,9 @@ public class Gestor extends javax.swing.JInternalFrame {
 
         jPanel20.setOpaque(false);
 
+        jButton_seguroVehiculos.setBackground(new java.awt.Color(102, 102, 255));
         jButton_seguroVehiculos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_seguroVehiculos.setForeground(new java.awt.Color(255, 255, 255));
         jButton_seguroVehiculos.setText("Contratar");
         jButton_seguroVehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1211,7 +1226,9 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton6.setBackground(new java.awt.Color(102, 102, 255));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Salir");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1219,7 +1236,9 @@ public class Gestor extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton_contratacinonesVehiculos.setBackground(new java.awt.Color(102, 102, 255));
         jButton_contratacinonesVehiculos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton_contratacinonesVehiculos.setForeground(new java.awt.Color(255, 255, 255));
         jButton_contratacinonesVehiculos.setText("Contrataciones");
         jButton_contratacinonesVehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1234,9 +1253,9 @@ public class Gestor extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton_contratacinonesVehiculos)
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addComponent(jButton_seguroVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1280,7 +1299,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 730, 380));
+        jPanel3.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 730, 380));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/vehiculos.jpg"))); // NOI18N

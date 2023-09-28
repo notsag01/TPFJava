@@ -22,7 +22,7 @@ public class Cambio extends javax.swing.JInternalFrame {
             double cantMonedaExtranjera= cantidadPesos * tasaCambio;
             return cantMonedaExtranjera * alicuotaImpPais;
         }
-        private double calcularImpuestoGanancias(double cantidadPEsos, double tasaCambio, double alicuotaGcias){
+        private double calcularImpuestoGanancias(double cantidadPesos, double tasaCambio, double alicuotaGcias){
             double cantMonedaExtranjera =  cantidadPesos * tasaCambio;
             return cantMonedaExtranjera * alicuotaGcias;
         }

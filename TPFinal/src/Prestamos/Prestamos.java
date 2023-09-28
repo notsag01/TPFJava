@@ -1,11 +1,13 @@
 package Prestamos;
 
 import Clientes.*;
+import Clientes.EncontrarClientes;
 import javax.swing.JOptionPane;
 
 
 public class Prestamos extends javax.swing.JInternalFrame {
     int interesMinimo=80,interesMedio=100,interesMaximo=150,capital, meses,intereses;  
+    private String nombre,apellido;
     private String usuario;
     
     
@@ -68,6 +70,13 @@ public class Prestamos extends javax.swing.JInternalFrame {
         
         jTextField_deuda.setText(String.format("$%,.2f", capitalFinal));
         jTextField_cuota.setText(String.format("$%,.2f", cuotas));
+    }
+    public void buscarID(String id){
+        EncontrarClientes encontrarCliente = new EncontrarClientes(id);
+        encontrarCliente.buscarCliente();
+        nombre=encontrarCliente.getNombre();
+        apellido=encontrarCliente.getApellido();
+        jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
     }
 
     /**
@@ -410,7 +419,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
 
     private void jButton_lupaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_lupaActionPerformed
         String id=jTextField_id.getText();
-        //buscarID(id);
+        buscarID(id);
     }//GEN-LAST:event_jButton_lupaActionPerformed
 
     /**

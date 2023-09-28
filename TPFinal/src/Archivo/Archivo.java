@@ -1,6 +1,9 @@
-package Seguros;
+package Archivo;
 
 
+
+import Cambio.CambioClientes;
+import Seguros.Personas;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -172,6 +175,22 @@ public class Archivo {
             }
             break;
         }    
-    }   
+    }
+        public void guardarInfo(CambioClientes cambioClientes){    
+            try {
+                BufferedWriter bw = new BufferedWriter(new FileWriter("ArchivoCambio.txt",true));
+                bw.write(
+                        cambioClientes.getUsuario() + "," +
+                        cambioClientes.getId() + "," +
+                        cambioClientes.getNombre() + "," +
+                        cambioClientes.getApellido()
+                );
+                bw.newLine();
+                bw.close();
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+        }
+    
     
 }

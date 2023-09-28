@@ -1,6 +1,7 @@
 package Seguros;
 
 
+import Archivo.Archivo;
 import Clientes.EncontrarClientes;
 import java.awt.Color;
 import java.awt.Component;

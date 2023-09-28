@@ -1,6 +1,7 @@
 package Cambio;
 
 
+import Archivo.Archivo;
 import Clientes.EncontrarClientes;
 import javax.swing.JOptionPane;
 
@@ -82,8 +83,8 @@ public class Cambio extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Ingrese su Cuit");
         }else{
             CambioClientes cambioClientes = new CambioClientes(usuario,id,nombre,apellido);
-            CambioArchivo cambioArchivo = new CambioArchivo();
-            cambioArchivo.guardarInfo(cambioClientes);
+            Archivo archivo = new Archivo();
+            archivo.guardarInfo(cambioClientes);
             
             limpiarInformacion();
         }

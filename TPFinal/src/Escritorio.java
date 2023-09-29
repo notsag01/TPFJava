@@ -1,4 +1,5 @@
 
+import Archivo.TablaClientes;
 import Cambio.Cambio;
 import Clientes.Altas;
 import Prestamos.Prestamos;
@@ -21,6 +22,12 @@ public class Escritorio extends javax.swing.JFrame {
     private Escritorio() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    private void abrirTablaClientes(){
+        TablaClientes tablaClientes = new TablaClientes();
+        tablaClientes.setVisible(true);
+        jPanel_escritorio.add(tablaClientes);
+    }
+    
     private void abrirPrestamos(){
         Prestamos prestamos = new Prestamos(usuario);
         prestamos.setVisible(true);
@@ -215,7 +222,7 @@ public class Escritorio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+        abrirTablaClientes();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

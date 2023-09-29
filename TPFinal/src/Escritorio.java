@@ -5,6 +5,7 @@ import Clientes.Altas;
 import Prestamos.Prestamos;
 import Seguros.Gestor;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class Escritorio extends javax.swing.JFrame {
@@ -23,9 +24,13 @@ public class Escritorio extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     private void abrirTablaClientes(){
-        TablasInformacion tablaClientes = new TablasInformacion();
-        tablaClientes.setVisible(true);
-        jPanel_escritorio.add(tablaClientes);
+        if(usuario.equals("Admin")){
+            TablasInformacion tablaClientes = new TablasInformacion();
+            tablaClientes.setVisible(true);
+            jPanel_escritorio.add(tablaClientes);
+        }else{
+            JOptionPane.showMessageDialog(null, "No tiene acceso a está del código");
+        }
     }
     
     private void abrirPrestamos(){

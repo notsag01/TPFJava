@@ -1,5 +1,5 @@
 
-import Archivo.TablaClientes;
+import Archivo.TablasInformacion;
 import Cambio.Cambio;
 import Clientes.Altas;
 import Prestamos.Prestamos;
@@ -23,7 +23,7 @@ public class Escritorio extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     private void abrirTablaClientes(){
-        TablaClientes tablaClientes = new TablaClientes();
+        TablasInformacion tablaClientes = new TablasInformacion();
         tablaClientes.setVisible(true);
         jPanel_escritorio.add(tablaClientes);
     }

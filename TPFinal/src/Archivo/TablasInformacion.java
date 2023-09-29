@@ -1,14 +1,62 @@
 
 package Archivo;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
-public class TablaClientes extends javax.swing.JFrame {
 
+public class TablasInformacion extends javax.swing.JFrame {
+    DefaultTableModel dtm = new DefaultTableModel();
 
-    public TablaClientes() {
+    public TablasInformacion() {
         initComponents();
+        tablaClientes();
+        
     }
-
+    //id,nombre,apellido,mail,fechaNacimiento,genero,domicilio,localidad,provincia,estadoCivil,hijos
+    public void tablaClientes(){
+        dtm.addColumn("CUIT");
+        dtm.addColumn("NOMBRE");
+        dtm.addColumn("APELLIDO");
+        dtm.addColumn("MAIL");
+        dtm.addColumn("FECHA NAC.");
+        dtm.addColumn("GENERO");
+        dtm.addColumn("DOMICILIO");
+        dtm.addColumn("LOCALIDA");
+        dtm.addColumn("PROVINCIA");
+        dtm.addColumn("ESTADO CIVIL");
+        dtm.addColumn("HIJOS");
+        
+        jTable_tabla.setModel(dtm);
+        
+        String fila[];
+        String linea;
+        
+        try {
+            BufferedReader escribir = new BufferedReader(new FileReader("archivoClientes.txt"));
+            try {
+                linea=escribir.readLine();
+                while(linea!=null){
+                    fila=linea.split(",");
+                    dtm.addRow(fila);
+                    linea=escribir.readLine();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(TablasInformacion.class.getName()).log(Level.SEVERE, null, ex);
+                
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(TablasInformacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+        
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -17,7 +65,7 @@ public class TablaClientes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable_tabla = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -29,7 +77,7 @@ public class TablaClientes extends javax.swing.JFrame {
 
         jPanel2.setOpaque(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -40,8 +88,8 @@ public class TablaClientes extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setOpaque(false);
-        jScrollPane1.setViewportView(jTable1);
+        jTable_tabla.setOpaque(false);
+        jScrollPane1.setViewportView(jTable_tabla);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -110,20 +158,21 @@ public class TablaClientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TablasInformacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TablasInformacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TablasInformacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TablasInformacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TablaClientes().setVisible(true);
+                new TablasInformacion().setVisible(true);
             }
         });
     }
@@ -135,6 +184,6 @@ public class TablaClientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable_tabla;
     // End of variables declaration//GEN-END:variables
 }

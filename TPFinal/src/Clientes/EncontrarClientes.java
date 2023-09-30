@@ -1,19 +1,26 @@
 
 package Clientes;
 
+import Seguros.Gestor;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class EncontrarClientes {
     String id,nombre,apellido;
+    boolean encontrado=false;
     
     public EncontrarClientes(String id){
         this.id=id;
+    }
+
+    public boolean isEncontrado() {
+        return encontrado;
     }
     
     public void buscarCliente(){
@@ -41,10 +48,13 @@ public class EncontrarClientes {
                             System.out.println(nombreCliente);
                             nombre=nombreCliente;
                             apellido=apellidoCliente;
+                            encontrado=true;
                             break;
                         }
-                    }else{
-                        System.out.println("No se encontró el registro");
+                    }
+                    if(!encontrado){
+                        JOptionPane.showMessageDialog(null, "El componente no fue encontrado");
+                        break;
                     }
                 }
             } catch (IOException ex) {

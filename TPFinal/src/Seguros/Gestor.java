@@ -334,10 +334,15 @@ public class Gestor extends javax.swing.JInternalFrame {
             jTextField_anio.setText("");
         }
         
-        private void buscarID(String id){
+        private void buscarID(String id){            
             EncontrarClientes encontrarCliente = new EncontrarClientes(id);
             encontrarCliente.buscarCliente();
-            jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            if(encontrarCliente.isEncontrado()){
+                jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            }else{
+                jTextField_nombreCliente.setText("");
+                jTextField_id.setText("");
+            }
         }
         
     
@@ -1474,7 +1479,8 @@ public class Gestor extends javax.swing.JInternalFrame {
                         .addComponent(jTextField_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel_frases, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel_frases, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

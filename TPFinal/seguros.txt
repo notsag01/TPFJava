@@ -17,3 +17,4 @@ Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,-,-,-,Noteboks,1,Consola
 Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,-,-,-,1,-,Televisor,55
 Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,-,-,-,1,-,-,55
 Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,null,null,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Heladera,Lavarropas,Cocina,-,null,-,-,null

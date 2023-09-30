@@ -122,12 +122,12 @@ public class Gestor extends javax.swing.JInternalFrame {
             heladera="-";
         }
         if(jCheckBox_lavarropas.isSelected()){
-            heladera=jCheckBox_lavarropas.getText();
+            lavarropas=jCheckBox_lavarropas.getText();
         }else{
             lavarropas="-";
         }
         if(jCheckBox_cocina.isSelected()){
-            heladera=jCheckBox_cocina.getText();
+            cocina=jCheckBox_cocina.getText();
         }else{
             cocina="-";
         }

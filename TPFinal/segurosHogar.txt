@@ -1,9 +1,1 @@
 
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Heladera,-,-,-,3,-,-,3
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Lavarropas,-,-,-,3,-,-,3
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,-,-,-,3,-,-,3
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Heladera,-,-,-,3,-,-,3
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,-,-,-,Noteboks,1,Consola Games,-,3
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,-,-,-,1,-,Televisor,55
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,-,-,-,1,-,-,55
-Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,null,null,-,null,-,-,null

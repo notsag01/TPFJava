@@ -3,6 +3,8 @@ package Seguros;
 
 import Archivo.Archivo;
 import Clientes.EncontrarClientes;
+import Seguros.Calculo.Calculos;
+import Seguros.Calculo.SHPrima;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -101,6 +103,13 @@ public class Gestor extends javax.swing.JInternalFrame {
         robo=(String)jComboBox_robo.getSelectedItem();
         if(robo.equals("")){
             robo="-";
+            SHPrima shp = new SHPrima();
+            shp.setCoberturaHogar(1000);
+            System.out.println(shp.getCoberturaHogar());
+        }else{
+            SHPrima shp = new SHPrima();
+            shp.setCoberturaHogar(2000);
+            System.out.println(shp.getCoberturaHogar());
         }
         inundacion=(String)jComboBox_inundacion.getSelectedItem();
         if(inundacion.equals("")){
@@ -459,6 +468,11 @@ public class Gestor extends javax.swing.JInternalFrame {
         jCheckBox_incendio.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jCheckBox_incendioItemStateChanged(evt);
+            }
+        });
+        jCheckBox_incendio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox_incendioActionPerformed(evt);
             }
         });
 
@@ -1809,6 +1823,10 @@ public class Gestor extends javax.swing.JInternalFrame {
          String id=jTextField_id.getText();
          buscarID(id);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jCheckBox_incendioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_incendioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox_incendioActionPerformed
 
     /**
      * @param args the command line arguments

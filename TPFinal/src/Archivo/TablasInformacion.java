@@ -12,12 +12,27 @@ import javax.swing.table.DefaultTableModel;
 
 public class TablasInformacion extends javax.swing.JFrame {
     DefaultTableModel dtm = new DefaultTableModel();
+    String tipoTabla;
 
-    public TablasInformacion() {
+
+    public TablasInformacion(String tipoTabla) {
         initComponents();
-        tablaClientes();
+        tablas(tipoTabla);
         
     }
+
+   private TablasInformacion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+   
+   private void tablas(String tabla){ 
+        switch(tabla){
+            case "clientes": tablaClientes();
+            break;
+            case "Seguro Vida": tablaSegVida();
+            break;
+        }
+   }
     //id,nombre,apellido,mail,fechaNacimiento,genero,domicilio,localidad,provincia,estadoCivil,hijos
     public void tablaClientes(){
         dtm.addColumn("CUIT");
@@ -52,6 +67,44 @@ public class TablasInformacion extends javax.swing.JFrame {
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TablasInformacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private void tablaSegVida(){
+        dtm.addColumn("TIPO SEGURO");
+        dtm.addColumn("CUIT");
+        dtm.addColumn("NOMBRE Y APELLIDO");
+        dtm.addColumn("TELEFONO");
+        dtm.addColumn("MAIL");
+        dtm.addColumn("INCENDIO");
+        dtm.addColumn("ROBO");
+        dtm.addColumn("INUNDACION");
+        dtm.addColumn("HELADERA");
+        dtm.addColumn("LAVARROPAS");
+        dtm.addColumn("COCINA");
+        dtm.addColumn("NOTEBOOKS");
+        dtm.addColumn("NOTEBOOKS CANT");
+        dtm.addColumn("CONSOLAS");
+        dtm.addColumn("TELEVISOR");
+        dtm.addColumn("TELEVISOR CANT");
+        
+        jTable_tabla.setModel(dtm);
+        
+        String fila[];
+        String linea;
+        try {
+            BufferedReader escribir = new BufferedReader(new FileReader("segurosHogar.txt"));            
+            try {
+                linea=escribir.readLine();
+                while(linea!=null){
+                    fila=linea.split(",");
+                    dtm.addRow(fila);
+                    linea=escribir.readLine();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }            
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex);
         }
     }
     

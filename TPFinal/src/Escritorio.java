@@ -23,9 +23,18 @@ public class Escritorio extends javax.swing.JFrame {
     private Escritorio() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    private void abrirTablaSegVida(){
+        if(usuario.equals("ADMIN")){
+            TablasInformacion tablaClientes = new TablasInformacion("Seguro Vida");
+            tablaClientes.setVisible(true);
+            jPanel_escritorio.add(tablaClientes);
+        }else{
+            JOptionPane.showMessageDialog(null, "No tiene acceso a está del código");
+        }       
+    }
     private void abrirTablaClientes(){
-        if(usuario.equals("Admin")){
-            TablasInformacion tablaClientes = new TablasInformacion();
+        if(usuario.equals("ADMIN")){
+            TablasInformacion tablaClientes = new TablasInformacion("clientes");
             tablaClientes.setVisible(true);
             jPanel_escritorio.add(tablaClientes);
         }else{
@@ -257,7 +266,7 @@ public class Escritorio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
+        abrirTablaSegVida();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**

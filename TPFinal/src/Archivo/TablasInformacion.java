@@ -31,6 +31,8 @@ public class TablasInformacion extends javax.swing.JFrame {
             break;
             case "Seguro Vida": tablaSegVida();
             break;
+            case "Seguro Automotor": tablaSegAuto() ;
+            break;
         }
    }
     //id,nombre,apellido,mail,fechaNacimiento,genero,domicilio,localidad,provincia,estadoCivil,hijos
@@ -93,6 +95,46 @@ public class TablasInformacion extends javax.swing.JFrame {
         String linea;
         try {
             BufferedReader escribir = new BufferedReader(new FileReader("segurosHogar.txt"));            
+            try {
+                linea=escribir.readLine();
+                while(linea!=null){
+                    fila=linea.split(",");
+                    dtm.addRow(fila);
+                    linea=escribir.readLine();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }            
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex);
+        }
+    }
+    private void tablaSegAuto(){
+        dtm.addColumn("TIPO SEGURO");
+        dtm.addColumn("CUIT");
+        dtm.addColumn("NOMBRE Y APELLIDO");
+        dtm.addColumn("TELEFONO");
+        dtm.addColumn("MAIL");
+        dtm.addColumn("DOMINIO");
+        dtm.addColumn("MARCA");
+        dtm.addColumn("dtm");
+        dtm.addColumn("AÑO");
+        dtm.addColumn("TERCERO COMPLETO");
+        dtm.addColumn("RESP. CIVIL");
+        dtm.addColumn("TODO RIESGO CF");
+        dtm.addColumn("TODO RIESGO SF");
+        dtm.addColumn("GRANIZO");
+        dtm.addColumn("FRANQUICIA");
+        
+
+        jTable_tabla.setModel(dtm);
+        
+        //cargarFilas();
+        
+        String fila[];
+        String linea;
+        try {
+            BufferedReader escribir = new BufferedReader(new FileReader("segurosAutomotor.txt"));            
             try {
                 linea=escribir.readLine();
                 while(linea!=null){

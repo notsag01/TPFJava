@@ -23,6 +23,15 @@ public class Escritorio extends javax.swing.JFrame {
     private Escritorio() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    private void abrirTablaSeguroAuto(){
+        if(usuario.equals("ADMIN")){
+            TablasInformacion tablaClientes = new TablasInformacion("Seguro Automotor");
+            tablaClientes.setVisible(true);
+            jPanel_escritorio.add(tablaClientes);
+        }else{
+            JOptionPane.showMessageDialog(null, "No tiene acceso a está del código");
+        }           
+    }
     private void abrirTablaSegVida(){
         if(usuario.equals("ADMIN")){
             TablasInformacion tablaClientes = new TablasInformacion("Seguro Vida");
@@ -215,6 +224,11 @@ public class Escritorio extends javax.swing.JFrame {
 
         jMenuItem5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenuItem5.setText("Automotor");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem5);
 
         jMenuItem7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -268,6 +282,10 @@ public class Escritorio extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         abrirTablaSegVida();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        abrirTablaSeguroAuto();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

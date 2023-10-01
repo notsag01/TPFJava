@@ -1,4 +1,7 @@
 
+import javax.swing.JOptionPane;
+
+
 public class Login extends javax.swing.JFrame {
 
     public Login() {
@@ -23,19 +26,27 @@ public class Login extends javax.swing.JFrame {
         switch(usuario){
             case "ADMIN": if(contrasenia.equals("admin")){
                             abrirEscritorio(usuario);
-                        }else{System.out.println("noOk");}
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Contraseña incorrecta.\n Intentelo nuevamente");
+                        }
             break;
             case "CHAVO": if(contrasenia.equals("123")){
                             abrirEscritorio(usuario);
-                        }else{System.out.println("noOk");}
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Contraseña incorrecta.\n Intentelo nuevamente");
+                        }
             break;
             case "CHAPULIN": if(contrasenia.equals("123")){
                             abrirEscritorio(usuario);
-                        }else{System.out.println("noOk");}
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Contraseña incorrecta.\n Intentelo nuevamente");
+                        }
             break;
             case "DON RAMON": if(contrasenia.equals("123")){
                             abrirEscritorio(usuario);
-                        }else{System.out.println("noOk");}
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Contraseña incorrecta.\n Intentelo nuevamente");
+                        }
             break;
         }
     }

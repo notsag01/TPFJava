@@ -109,18 +109,17 @@ public class Gestor extends javax.swing.JInternalFrame {
         robo=(String)jComboBox_robo.getSelectedItem();
         if(robo.equals("")){
             robo="-";
+        }else{
             SHPrima shp = new SHPrima();
             shp.setPrimaBase(1000);
-            System.out.println(shp.getPrimaBase());
-        }else{
-            
+            System.out.println(shp.getPrimaBase());            
         }
         inundacion=(String)jComboBox_inundacion.getSelectedItem();
         if(inundacion.equals("")){
             inundacion="-";
+        }else{
             SHPrima shp = new SHPrima();
-            shp.setPrimaBase(2000);
-            
+            shp.setPrimaBase(2000);            
             System.out.println(shp.getPrimaBase());
         }
         

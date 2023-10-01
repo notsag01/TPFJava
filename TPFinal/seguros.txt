@@ -18,3 +18,10 @@ Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,-,-,-,1,-,Televis
 Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,-,-,-,1,-,-,55
 Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Cocina,null,null,-,null,-,-,null
 Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,Heladera,Lavarropas,Cocina,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,-,-,-,-,-,-,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,Parcial,-,-,-,-,-,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,Total,-,-,-,-,-,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,Total,-,-,-,-,-,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,Parcial,-,-,-,-,-,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,Total,-,-,-,-,-,-,null,-,-,null
+Seguro Hogar,11111111111,Gaston Cordoba,null,null,Parcial,Parcial,Parcial,-,-,-,-,null,-,-,null

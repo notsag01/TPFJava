@@ -2,11 +2,11 @@
 package Seguros.Calculo;
 
 
-public class SHPrima extends Calculos{
+public class SHPrima extends CalculosHogar{
 
     @Override
     public double calcularPrima() {
-        return this.getCoberturaHogar();
+        return this.getPrimaBase() *1.25;
     }
     
 }

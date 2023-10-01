@@ -3,7 +3,7 @@ package Seguros;
 
 import Archivo.Archivo;
 import Clientes.EncontrarClientes;
-import Seguros.Calculo.Calculos;
+import Seguros.Calculo.CalculosHogar;
 import Seguros.Calculo.SHPrima;
 import java.awt.Color;
 import java.awt.Component;
@@ -20,6 +20,7 @@ import javax.swing.border.Border;
 
 public class Gestor extends javax.swing.JInternalFrame {
     private String usuario;
+    private double prima;
     
     private Timer timer;
      String[] frases = {
@@ -99,21 +100,28 @@ public class Gestor extends javax.swing.JInternalFrame {
         incendio=(String)jComboBox_incendio.getSelectedItem();
         if(incendio.equals("")){
             incendio="-";
+        }else{
+            SHPrima shp = new SHPrima();
+            shp.setPrimaBase(3000);
+            prima=shp.calcularPrima();
+            System.out.println(prima);
         }
         robo=(String)jComboBox_robo.getSelectedItem();
         if(robo.equals("")){
             robo="-";
             SHPrima shp = new SHPrima();
-            shp.setCoberturaHogar(1000);
-            System.out.println(shp.getCoberturaHogar());
+            shp.setPrimaBase(1000);
+            System.out.println(shp.getPrimaBase());
         }else{
-            SHPrima shp = new SHPrima();
-            shp.setCoberturaHogar(2000);
-            System.out.println(shp.getCoberturaHogar());
+            
         }
         inundacion=(String)jComboBox_inundacion.getSelectedItem();
         if(inundacion.equals("")){
             inundacion="-";
+            SHPrima shp = new SHPrima();
+            shp.setPrimaBase(2000);
+            
+            System.out.println(shp.getPrimaBase());
         }
         
         if(jCheckBox_heladera.isSelected()){
@@ -283,9 +291,13 @@ public class Gestor extends javax.swing.JInternalFrame {
         public void limpiarDatosPersonaHogar(){
            jCheckBox_incendio.setSelected(false);
            jCheckBox_robo.setSelected(false);
+           jComboBox_inundacion.setSelectedIndex(0);
            jCheckBox_inundacion.setSelected(false);
+           jComboBox_inundacion.setSelectedIndex(0);
            jComboBox_incendio.setEnabled(false);
+           jComboBox_incendio.setSelectedIndex(0);
            jComboBox_robo.setEnabled(false);
+           jComboBox_robo.setSelectedIndex(0);
            jComboBox_inundacion.setEnabled(false);
            jCheckBox_heladera.setSelected(false);
            jCheckBox_lavarropas.setSelected(false);

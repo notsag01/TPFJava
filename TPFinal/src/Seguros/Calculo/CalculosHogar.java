@@ -5,6 +5,7 @@ package Seguros.Calculo;
 
 public abstract class CalculosHogar {
     private int primaBase;
+    
 
     public int getPrimaBase() {
         return primaBase;

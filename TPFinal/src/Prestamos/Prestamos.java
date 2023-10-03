@@ -252,6 +252,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
         });
 
         jButton_lupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.jpg"))); // NOI18N
+        jButton_lupa.setBorder(null);
         jButton_lupa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_lupaActionPerformed(evt);

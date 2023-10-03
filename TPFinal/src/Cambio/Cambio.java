@@ -136,6 +136,8 @@ public class Cambio extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+        setTitle("Calculadora Cambio");
         setOpaque(true);
         setPreferredSize(new java.awt.Dimension(540, 646));
 

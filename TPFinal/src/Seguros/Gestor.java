@@ -1434,7 +1434,7 @@ public class Gestor extends javax.swing.JInternalFrame {
         jLabel20.setText("CUIT/CUIL");
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reiniciar.png"))); // NOI18N
-        jButton5.setBorder(null);
+        jButton5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);

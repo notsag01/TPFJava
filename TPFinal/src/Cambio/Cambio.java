@@ -69,10 +69,13 @@ public class Cambio extends javax.swing.JInternalFrame {
     
     public void buscarID(String id){
         EncontrarClientes encontrarCliente = new EncontrarClientes(id);
-        encontrarCliente.buscarCliente();
-        nombre=encontrarCliente.getNombre();
-        apellido=encontrarCliente.getApellido();
-        jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            encontrarCliente.buscarCliente();
+            if(encontrarCliente.isEncontrado()){
+                jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            }else{
+                jTextField_nombreCliente.setText("");
+                jTextField_id.setText("");
+            }
     }
     public void cambiar(){
         if(jTextField_nombreCliente.getText().equals("")){

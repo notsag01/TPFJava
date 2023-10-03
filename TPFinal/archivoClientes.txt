@@ -1,2 +1,1 @@
-20202020202,Gaton,Cordoba,gaston@gast.com,22222222,bla bla bla,bla bl,Buenos Aires,SOLTERO,2
-11111111111,Fulan,DeTal,fulano@deTal.com,221122,bla bla,bla bla bla,Catamarca,SOLTERO,0
+11111111111,Gaston,Cordoba,gast@gast.com,22091981,MASCULINO,Cordoba 444,Capital,Capital Federal,SOLTERO,2

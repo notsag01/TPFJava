@@ -73,10 +73,13 @@ public class Prestamos extends javax.swing.JInternalFrame {
     }
     public void buscarID(String id){
         EncontrarClientes encontrarCliente = new EncontrarClientes(id);
-        encontrarCliente.buscarCliente();
-        nombre=encontrarCliente.getNombre();
-        apellido=encontrarCliente.getApellido();
-        jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            encontrarCliente.buscarCliente();
+            if(encontrarCliente.isEncontrado()){
+                jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            }else{
+                jTextField_nombreCliente.setText("");
+                jTextField_id.setText("");
+            }
     }
 
     /**
@@ -112,9 +115,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
         jButton_lupa = new javax.swing.JButton();
         jTextField_nombreCliente = new javax.swing.JTextField();
 
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
+        setClosable(true);
         setTitle("Alta Clientes");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -252,6 +253,7 @@ public class Prestamos extends javax.swing.JInternalFrame {
         });
 
         jButton_lupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.jpg"))); // NOI18N
+        jButton_lupa.setBorder(null);
         jButton_lupa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_lupaActionPerformed(evt);

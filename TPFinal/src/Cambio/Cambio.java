@@ -1,7 +1,9 @@
 package Cambio;
 
 
+import Archivo.Archivo;
 import Clientes.EncontrarClientes;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 
@@ -20,19 +22,14 @@ public class Cambio extends javax.swing.JInternalFrame {
             double cantMonedaExtranjera= cantidadPesos * tasaCambio;
             return cantMonedaExtranjera * alicuotaImpPais;
         }
-        private double calcularImpuestoGanancias(double cantidadPEsos, double tasaCambio, double alicuotaGcias){
+        private double calcularImpuestoGanancias(double cantidadPesos, double tasaCambio, double alicuotaGcias){
             double cantMonedaExtranjera =  cantidadPesos * tasaCambio;
             return cantMonedaExtranjera * alicuotaGcias;
         }
         private void calcularCambio(){
-            try{
-        cantidadPesos = Double.parseDouble(jTextField_pesos.getText());
-        //System.out.println(cantidadPesos);
-        }catch(NumberFormatException ex){
-            JOptionPane.showMessageDialog(null, "El dato ingresado no es correcto",
-                    "Mensaje de Error",
-                    JOptionPane.ERROR_MESSAGE);
-        }
+            id=jTextField_id.getText();
+            cantidadPesos = Double.parseDouble(jTextField_pesos.getText());
+            //System.out.println(cantidadPesos);
     
         double alicuotaImpPais=0.30;
         double alicuotaGcias=0.35; 
@@ -72,18 +69,23 @@ public class Cambio extends javax.swing.JInternalFrame {
     
     public void buscarID(String id){
         EncontrarClientes encontrarCliente = new EncontrarClientes(id);
-        encontrarCliente.buscarCliente();
-        nombre=encontrarCliente.getNombre();
-        apellido=encontrarCliente.getApellido();
-        jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            encontrarCliente.buscarCliente();
+            if(encontrarCliente.isEncontrado()){
+                jTextField_nombreCliente.setText(encontrarCliente.getNombre() + " " + encontrarCliente.getApellido());
+            }else{
+                jTextField_nombreCliente.setText("");
+                jTextField_id.setText("");
+            }
     }
     public void cambiar(){
         if(jTextField_nombreCliente.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Ingrese su Cuit");
         }else{
             CambioClientes cambioClientes = new CambioClientes(usuario,id,nombre,apellido);
-            CambioArchivo cambioArchivo = new CambioArchivo();
-            cambioArchivo.guardarInfo(cambioClientes);
+            Archivo archivo = new Archivo();
+            archivo.guardarInfo(cambioClientes);
+            
+            JOptionPane.showMessageDialog(null, "La transacción fue realizada \n Existosamente");
             
             limpiarInformacion();
         }

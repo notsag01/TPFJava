@@ -19,6 +19,7 @@ public class ArchivoClientes {
                     cliente.getApellido()+ "," +
                     cliente.getMail()+ "," +
                     cliente.getFechaNacimiento()+ "," +
+                    cliente.getGenero()+ "," +
                     cliente.getDomicilio()+ "," +
                     cliente.getLocalidad()+ "," +
                     cliente.getProvincia()+ "," +

@@ -6,7 +6,7 @@ public class SHPrima extends CalculosHogar{
 
     @Override
     public double calcularPrima() {
-        return this.getPrimaBase() *1.25;
+        return this.getPrimaBase() + getTotalAdicionales() ;
     }
     
 }

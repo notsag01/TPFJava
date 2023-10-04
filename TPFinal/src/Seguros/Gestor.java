@@ -20,7 +20,7 @@ import javax.swing.border.Border;
 
 public class Gestor extends javax.swing.JInternalFrame {
     private String usuario;
-    private double prima;
+    
     
     private Timer timer;
      String[] frases = {
@@ -76,7 +76,11 @@ public class Gestor extends javax.swing.JInternalFrame {
     String terceroCompleto,responsabilidadCivil, todoRiesgoCF,todoRiesgoSF,granizo, franquicia;    
     boolean arroba=false, punto=false;
     String id;
+    
     SHPrima shp = new SHPrima();
+    private double prima;
+    private double sumaAdicioneales=0;
+    
     
     public void getData(String seguro){
          
@@ -107,14 +111,12 @@ public class Gestor extends javax.swing.JInternalFrame {
             }else{
                 shp.setPrimaBase(2800);
             }
-            prima=shp.calcularPrima();
             jTextField_prima.setText(String.format("$%,.2f", prima));
         }
         robo=(String)jComboBox_robo.getSelectedItem();
         if(robo.equals("")){
             robo="-";
         }else{
-            SHPrima shp = new SHPrima();
             if(robo.equalsIgnoreCase("total")){
                 shp.setPrimaBase(1000);
             }else{
@@ -126,13 +128,13 @@ public class Gestor extends javax.swing.JInternalFrame {
         if(inundacion.equals("")){
             inundacion="-";
         }else{
-            SHPrima shp = new SHPrima();
             shp.setPrimaBase(2000);            
-            System.out.println(shp.getPrimaBase());
         }
         
         if(jCheckBox_heladera.isSelected()){
             heladera=jCheckBox_heladera.getText();
+            sumaAdicioneales+=500;
+            shp.setTotalAdicionales(sumaAdicioneales);
         }else{
             heladera="-";
         }
@@ -170,6 +172,8 @@ public class Gestor extends javax.swing.JInternalFrame {
         );
         Archivo archivo =new Archivo();
         archivo.escribirArchivo(persona);
+        
+        prima=shp.calcularPrima();
         
         limpiarDatosPersonaHogar();
         
@@ -557,6 +561,11 @@ public class Gestor extends javax.swing.JInternalFrame {
 
         jComboBox_incendio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox_incendio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Parcial", "Total" }));
+        jComboBox_incendio.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox_incendioItemStateChanged(evt);
+            }
+        });
         jComboBox_incendio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_incendioActionPerformed(evt);
@@ -603,6 +612,11 @@ public class Gestor extends javax.swing.JInternalFrame {
 
         jCheckBox_heladera.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jCheckBox_heladera.setText("Heladera");
+        jCheckBox_heladera.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jCheckBox_heladeraStateChanged(evt);
+            }
+        });
         jCheckBox_heladera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox_heladeraActionPerformed(evt);
@@ -1959,6 +1973,14 @@ public class Gestor extends javax.swing.JInternalFrame {
     private void jCheckBox_incendioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_incendioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox_incendioActionPerformed
+
+    private void jComboBox_incendioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_incendioItemStateChanged
+        getDatosPerosonaHogar();
+    }//GEN-LAST:event_jComboBox_incendioItemStateChanged
+
+    private void jCheckBox_heladeraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBox_heladeraStateChanged
+        getDatosPerosonaHogar();
+    }//GEN-LAST:event_jCheckBox_heladeraStateChanged
 
     /**
      * @param args the command line arguments

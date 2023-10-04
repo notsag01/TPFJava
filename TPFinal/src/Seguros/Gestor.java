@@ -76,6 +76,7 @@ public class Gestor extends javax.swing.JInternalFrame {
     String terceroCompleto,responsabilidadCivil, todoRiesgoCF,todoRiesgoSF,granizo, franquicia;    
     boolean arroba=false, punto=false;
     String id;
+    SHPrima shp = new SHPrima();
     
     public void getData(String seguro){
          
@@ -101,7 +102,6 @@ public class Gestor extends javax.swing.JInternalFrame {
         if(incendio.equals("")){
             incendio="-";
         }else{
-            SHPrima shp = new SHPrima();
             if(incendio.equalsIgnoreCase("total")){
                 shp.setPrimaBase(3000);
             }else{

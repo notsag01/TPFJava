@@ -209,6 +209,7 @@ public class Escritorio extends javax.swing.JFrame {
 
         jMenu3.setText("Informes");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu3.setPreferredSize(new java.awt.Dimension(100, 26));
 
         jMenuItem4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jMenuItem4.setText("Clientes");

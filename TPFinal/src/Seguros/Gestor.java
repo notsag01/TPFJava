@@ -1975,11 +1975,11 @@ public class Gestor extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jCheckBox_incendioActionPerformed
 
     private void jComboBox_incendioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_incendioItemStateChanged
-        getDatosPerosonaHogar();
+        //getDatosPerosonaHogar();
     }//GEN-LAST:event_jComboBox_incendioItemStateChanged
 
     private void jCheckBox_heladeraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBox_heladeraStateChanged
-        getDatosPerosonaHogar();
+        //getDatosPerosonaHogar();
     }//GEN-LAST:event_jCheckBox_heladeraStateChanged
 
     /**

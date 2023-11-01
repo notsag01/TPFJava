@@ -246,6 +246,11 @@ public class Prestamos extends javax.swing.JInternalFrame {
         jLabel7.setText("CUIT/CUIL");
 
         jTextField_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_id.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField_idFocusLost(evt);
+            }
+        });
         jTextField_id.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField_idKeyTyped(evt);
@@ -423,6 +428,13 @@ public class Prestamos extends javax.swing.JInternalFrame {
         String id=jTextField_id.getText();
         buscarID(id);
     }//GEN-LAST:event_jButton_lupaActionPerformed
+
+    private void jTextField_idFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_idFocusLost
+        if(jTextField_id.getText().length()==11){
+            String id=jTextField_id.getText();
+            buscarID(id);
+        }
+    }//GEN-LAST:event_jTextField_idFocusLost
 
     /**
      * @param args the command line arguments

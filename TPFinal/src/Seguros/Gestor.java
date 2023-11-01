@@ -480,7 +480,6 @@ public class Gestor extends javax.swing.JInternalFrame {
         jLabel_frases = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Seguros");
@@ -1558,20 +1557,12 @@ public class Gestor extends javax.swing.JInternalFrame {
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel20.setText("CUIT/CUIL");
 
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reiniciar.png"))); // NOI18N
         jButton5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.jpg"))); // NOI18N
-        jButton7.setBorder(null);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
             }
         });
 
@@ -1588,10 +1579,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton7))
+                            .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jTextField_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -1610,8 +1598,7 @@ public class Gestor extends javax.swing.JInternalFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1965,11 +1952,6 @@ public class Gestor extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jTextField_anioKeyTyped
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-         String id=jTextField_id.getText();
-         buscarID(id);
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void jCheckBox_incendioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_incendioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox_incendioActionPerformed
@@ -2025,7 +2007,6 @@ public class Gestor extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton_contratacinonesVehiculos;
     private javax.swing.JButton jButton_contratacionesHogar;
     private javax.swing.JButton jButton_contratacionesVida;

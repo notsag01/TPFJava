@@ -3,6 +3,7 @@ package Cambio;
 
 import Archivo.Archivo;
 import Clientes.EncontrarClientes;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -116,7 +117,6 @@ public class Cambio extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jTextField_id = new javax.swing.JTextField();
-        jButton_lupa = new javax.swing.JButton();
         jTextField_nombreCliente = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -166,16 +166,19 @@ public class Cambio extends javax.swing.JInternalFrame {
         jLabel7.setText("CUIT/CUIL");
 
         jTextField_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_id.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField_idFocusLost(evt);
+            }
+        });
+        jTextField_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_idActionPerformed(evt);
+            }
+        });
         jTextField_id.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField_idKeyTyped(evt);
-            }
-        });
-
-        jButton_lupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.jpg"))); // NOI18N
-        jButton_lupa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_lupaActionPerformed(evt);
             }
         });
 
@@ -193,19 +196,15 @@ public class Cambio extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField_nombreCliente)
                     .addComponent(jTextField_id, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                .addGap(29, 29, 29)
-                .addComponent(jButton_lupa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton_lupa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_id, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(51, Short.MAX_VALUE))
@@ -413,11 +412,6 @@ public class Cambio extends javax.swing.JInternalFrame {
         calcularCambio();
     }//GEN-LAST:event_jComboBox_monedaActionPerformed
 
-    private void jButton_lupaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_lupaActionPerformed
-        String id=jTextField_id.getText();
-        buscarID(id);
-    }//GEN-LAST:event_jButton_lupaActionPerformed
-
     private void jTextField_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_idKeyTyped
          int key=evt.getKeyChar();
         boolean numeros=key>=48&&key<=57;
@@ -430,12 +424,25 @@ public class Cambio extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jTextField_idKeyTyped
 
+    private void jTextField_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_idActionPerformed
+//        if(jTextField_id.getText().length()==11){
+//            String id=jTextField_id.getText();
+//            buscarID(id);
+//        }
+    }//GEN-LAST:event_jTextField_idActionPerformed
+
+    private void jTextField_idFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_idFocusLost
+        if(jTextField_id.getText().length()==11){
+            String id=jTextField_id.getText();
+            buscarID(id);
+        }
+    }//GEN-LAST:event_jTextField_idFocusLost
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton_Cambiar;
-    private javax.swing.JButton jButton_lupa;
     private javax.swing.JComboBox<String> jComboBox_moneda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
